@@ -4,7 +4,7 @@ import { Paper } from '@material-ui/core';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { Route, Switch } from "react-router-dom";
 import Home from './containers/Home';
-import Movies from './containers//Movies';
+import MovieList from './containers/MovieList';
 import Series from './containers//Series';
 import Artists from './containers//Artists';
 
@@ -60,7 +60,7 @@ function App() {
                 <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />       
                 <Switch>
                     <Route exact path="/" component={Home} />                
-                    <Route exact path="/movies" component={Movies} />
+                    <Route exact path="/movielist" component={MovieList} />
                     <Route exact path="/series" component={Series} />
                     <Route exact path="/artists" component={Artists} />
                 </Switch>                

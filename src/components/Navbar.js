@@ -4,7 +4,6 @@ import { AppBar, Toolbar, Grid, Typography, Button, IconButton, Menu, MenuItem }
 import { 
     Menu as MenuIcon, 
     Search as SearchIcon, 
-    Public as PublicIcon, 
     Notifications as NotificationsIcon,
     Brightness7 as LightIcon,
     Brightness4 as DarkIcon,
@@ -16,9 +15,6 @@ import { Link } from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
-    },
-    menuButton: {
-        marginRight: theme.spacing(2),
     },
     title: {
         flexGrow: 1,
@@ -72,7 +68,7 @@ const Navbar = (props) => {
                                     onClose={handleClose}                                    
                                 >                                    
                                     <MenuItem onClick={handleClose}>
-                                        <Button className={classes.menuItem} color="inherit" href="/movies">Кино</Button>
+                                        <Button className={classes.menuItem} color="inherit" href="/movielist">Кино</Button>
                                     </MenuItem>
                                     <MenuItem onClick={handleClose}>
                                         <Button className={classes.menuItem} color="inherit" href="/movies">Цуврал</Button>
@@ -100,7 +96,7 @@ const Navbar = (props) => {
                             <Grid item sm={4} className={classes.headerOptions}>
                                 {/* <Button color="inherit" href="/about">Бидний тухай</Button> */}
                                 <Button color="inherit">
-                                    <Link to="/movies" style={{ textDecoration: 'none', color: 'white' }}>Кино</Link>                                                                            
+                                    <Link to="/movielist" style={{ textDecoration: 'none', color: 'white' }}>Кино</Link>                                                                            
                                 </Button>
                                 <Button color="inherit">
                                     <Link to="/series" style={{ textDecoration: 'none', color: 'white' }}>Цуврал</Link>                                                                            
@@ -123,13 +119,13 @@ const Navbar = (props) => {
                                         <DarkIcon />
                                     )}                                    
                                 </IconButton>
-                                {/* <IconButton aria-label="notification" color="inherit">
+                                <IconButton aria-label="notification" color="inherit">
                                     <NotificationsIcon />
                                 </IconButton>                            
                                 <IconButton aria-label="notification" color="inherit">
                                     <AccountCircleIcon />
-                                </IconButton>  */}
-                                <Button color="inherit">Нэвтрэх</Button>
+                                </IconButton> 
+                                {/* <Button color="inherit">Нэвтрэх</Button> */}
                             </Grid>
                             </>
                         )}

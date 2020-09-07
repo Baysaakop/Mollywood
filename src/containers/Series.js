@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Paper } from '@material-ui/core';
+import React from 'react';
 import Breadcrumb from '../components/Breadcrumb';
 
 const Series = (props) => {
