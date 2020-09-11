@@ -1,11 +1,11 @@
 import React from 'react';
-import { Grid } from '@material-ui/core';
+import { Grid, FormControl, Typography, FormLabel, TextField, InputLabel, Select, MenuItem } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Breadcrumb from '../components/Breadcrumb';
 import MovieCard from '../components/MovieCard';
 import ListHeader from '../components/ListHeader';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
     },
@@ -14,10 +14,25 @@ const useStyles = makeStyles(() => ({
         maxWidth: "fit-content",
         marginTop: "10px",
     },
+    filterForm: {
+        border: `1px solid ${theme.palette.divider}`,
+        borderRadius: theme.shape.borderRadius,
+        backgroundColor: theme.palette.background.paper,
+        width: '80%',        
+        height: 'fit-content',        
+    },
+    selectEmpty: {
+        marginTop: theme.spacing(2),
+    },
 }));
 
 const MovieList = (props) => {
     const classes = useStyles();
+    const [age, setAge] = React.useState('');
+
+    const handleChange = (event) => {
+        setAge(event.target.value);
+    };
     return (
         <div className={classes.root}>
             <Breadcrumb page="КИНО ЖАГСААЛТ" />
@@ -56,8 +71,38 @@ const MovieList = (props) => {
                             </Grid>
                         </Grid>
                     </Grid>
-                    <Grid item container xs={12} sm={4}>        
-                        <h2>Form</h2>                
+                    <Grid item container xs={12} sm={4} style={{ display: "flex", justifyContent: "center" }}>        
+                        <form className={classes.filterForm} noValidate autoComplete="off">
+                            <Grid container direction="column" justify="flex-start" alignItems="center" spacing={2} style={{ padding: "5%" }}>
+                                <Grid item>
+                                    <FormLabel>
+                                        КИНО ХАЙХ
+                                    </FormLabel>
+                                </Grid>
+                                <Grid item>
+                                    <TextField id="outlined-basic" label="Movie name" variant="outlined" />
+                                </Grid>
+                                <Grid item>
+                                    <TextField id="outlined-basic" label="Movie name" variant="outlined" />
+                                </Grid>
+                                <Grid item>
+                                    <InputLabel id="demo-simple-select-filled-label">Genre</InputLabel>
+                                    <Select
+                                        labelId="demo-simple-select-filled-label"
+                                        id="demo-simple-select-filled"
+                                        value={age}
+                                        onChange={handleChange}
+                                        >
+                                        <MenuItem value="">
+                                            <em>None</em>
+                                        </MenuItem>
+                                        <MenuItem value={10}>Ten</MenuItem>
+                                        <MenuItem value={20}>Twenty</MenuItem>
+                                        <MenuItem value={30}>Thirty</MenuItem>
+                                    </Select>
+                                </Grid>
+                            </Grid>                           
+                        </form>       
                     </Grid>
                 </Grid>
                 <Grid item xs={false} sm={2}>                    
