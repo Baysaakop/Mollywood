@@ -10,7 +10,8 @@ const useStyles = makeStyles((theme) => ({
         width: 'fit-content',
         border: `1px solid ${theme.palette.divider}`,
         borderRadius: theme.shape.borderRadius,
-        backgroundColor: theme.palette.background.paper,        
+        backgroundColor: theme.palette.background.paper,
+        color: theme.palette.text.secondary,
         '& svg': {
             margin: theme.spacing(0.5),
         },
@@ -34,8 +35,8 @@ const ListHeader = (props) => {
     
     return (
         <div>
-            <Grid container alignItems="center">                                            
-                <Grid item container xs={3}>        
+            <Grid container alignItems="center" spacing={2}>                                            
+                <Grid item container xs={6} sm={3}>        
                     <Grid item container alignitems="center" className={classes.viewMode}>
                         <IconButton aria-label="listView" style={{ borderRadius: 0 }}>
                             <ListAltIcon />
@@ -46,12 +47,12 @@ const ListHeader = (props) => {
                         </IconButton>      
                     </Grid>                                                    
                 </Grid>             
-                <Grid item xs={6} style={{ textAlign: "center" }}>
+                <Grid item xs={6} sm={6} style={{ textAlign: "center" }}>
                     <Typography variant="body1">
                         Нийт <span>8</span> кино
                     </Typography>
                 </Grid> 
-                <Grid item xs={3} style={{ display: "flex", justifyContent: "flex-end" }}>
+                <Grid item xs={12} sm={3} style={{ display: "flex", justifyContent: "flex-end" }}>
                     <FormControl variant="outlined" className={classes.formControl}>
                         <InputLabel id="demo-simple-select-outlined-label">Эрэмбэлэх</InputLabel>
                         <Select
