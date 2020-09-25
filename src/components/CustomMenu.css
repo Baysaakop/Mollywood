@@ -1,0 +1,45 @@
+.logo {    
+    height: 48px;    
+    margin: 8px 32px 8px 64px;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoText {
+    color: #f1f1f1;
+    font-size: x-large;    
+    margin-left: 8px;
+}
+
+@keyframes rotating {
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.logo .anticon {
+    -webkit-animation: rotating 6s linear infinite;
+    -moz-animation: rotating 6s linear infinite;
+    -ms-animation: rotating 6s linear infinite;
+    -o-animation: rotating 6s linear infinite;
+    animation: rotating 6s linear infinite;
+}
+
+@media only screen and (max-width: 600px) {
+    .logo {
+        margin: 8px 16px 8px 16px;
+    }
+}

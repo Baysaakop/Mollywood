@@ -1,0 +1,14 @@
+.site-layout {
+    padding: 16px 64px;
+    margin-top: 64px;
+}
+
+@media only screen and (max-width: 600px) {
+    .site-layout {
+        padding: 16px 16px;
+    }
+}
+
+.site-layout .site-layout-background {
+    background: #fff;
+}
