@@ -106,6 +106,7 @@ const MovieList = (props) => {
                         renderItem={item => (
                             <List.Item>
                                 <MovieCard 
+                                    id={item.id}
                                     title={item.title} 
                                     poster={`https://image.tmdb.org/t/p/w500${item.poster_path}`}  
                                     rating={item.vote_average}
