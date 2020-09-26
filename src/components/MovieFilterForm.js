@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Form, Input, Button, Select, InputNumber, DatePicker } from 'antd';
 
 import './MovieFilterForm.css';
@@ -7,6 +7,18 @@ const { Option } = Select;
 const { RangePicker } = DatePicker;
 
 const MovieFilterForm = (props) => {
+
+    const api_key = process.env.REACT_APP_API;
+    const [genres, setGenres] = useState([]);
+
+    useEffect(() => {
+        fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${api_key}&language=en-US`)
+        .then(data => data.json())
+        .then(data => {
+            console.log(data.genres);
+            setGenres(data.genres);
+        })
+    }, []);    
 
     const onFinish = values => {        
         let name = checkInput(values['name']);           
@@ -26,19 +38,6 @@ const MovieFilterForm = (props) => {
         if (values['ratingmax'] != undefined) {
             ratingmax = values['ratingmax'];
         }
-        // const ratingmin = values['ratingmin'];
-        // const ratingmax = values['ratingmax'];
-        
-        // const printValues = {
-        //     'name': values['name'],
-        //     'genre': values['genre'],
-        //     'releasefrom': rangeValue[0].format('YYYY-MM-DD'),
-        //     'releaseto': rangeValue[1].format('YYYY-MM-DD'),
-        //     // 'range-picker': [rangeValue[0].format('YYYY-MM-DD'), rangeValue[1].format('YYYY-MM-DD')],
-        //     'ratingmin': values['ratingmin'],
-        //     'ratingmax': values['ratingmax'],
-        // }
-        // console.log('Received values of form: ', printValues);
         props.filter(name, genre, releasefrom, releaseto, ratingmin, ratingmax);
     };
 
@@ -69,13 +68,16 @@ const MovieFilterForm = (props) => {
                         placeholder="Төрөл жанр"                                
                         allowClear
                     >
-                        <Option value="adventure">Адал явпал</Option>
+                        {genres.map((genre) => 
+                            <Option key={genre.id} value={genre.name}>{genre.name}</Option>
+                        )}
+                        {/* <Option value="adventure">Адал явпал</Option>
                         <Option value="horror">Аймшиг</Option>
                         <Option value="drama">Драм</Option>
                         <Option value="crime">Гэмт хэрэг</Option>
                         <Option value="comedy">Инээдмийн</Option>
                         <Option value="fantasy">Уран Зөгнөлт</Option>
-                        <Option value="epic">Түүхэн</Option>
+                        <Option value="epic">Түүхэн</Option> */}
                     </Select>
                 </Form.Item>           
                 <Form.Item name="release-range-picker" label="Нээлт">
