@@ -27,8 +27,15 @@ img.poster {
     margin: 0px 8px;
 }
 
+div.actioncircles {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
 button.action {
-    color: #3c312d;
+    color: #3c312d;    
+    margin-right: 16px;
 }
 
 button.action:hover {
