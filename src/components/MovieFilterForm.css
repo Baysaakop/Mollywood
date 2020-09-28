@@ -1,7 +1,8 @@
 form.ant-form {
     margin: 0px 16px;
     padding: 16px;
-    border: 1px solid #001529;
+    border: 1px solid #d9d9d9; 
+    /* 001529 */
 }
 
 div.ant-form-item {

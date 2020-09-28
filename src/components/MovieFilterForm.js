@@ -26,23 +26,23 @@ const MovieFilterForm = (props) => {
         let rangeValue = values['release-range-picker'];
         let releasefrom = '1900-01-01';
         let releaseto = '2500-01-01';
-        if (rangeValue != undefined) {
+        if (rangeValue !== undefined) {
             releasefrom = rangeValue[0].format('YYYY-MM-DD');
             releaseto = rangeValue[1].format('YYYY-MM-DD'); 
         }        
         let ratingmin = 0;
         let ratingmax = 10;
-        if (values['ratingmin'] != undefined) {
+        if (values['ratingmin'] !== undefined) {
             ratingmin = values['ratingmin'];
         }
-        if (values['ratingmax'] != undefined) {
+        if (values['ratingmax'] !== undefined) {
             ratingmax = values['ratingmax'];
         }
         props.filter(name, genre, releasefrom, releaseto, ratingmin, ratingmax);
     };
 
     const checkInput = (input) => {        
-        if (input == undefined)
+        if (input === undefined)
             return '';
         else 
             return input;

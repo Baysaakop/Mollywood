@@ -1,0 +1,36 @@
+.main {
+    padding: 16px;
+}
+
+img.poster {
+    width: 100%;
+    height: auto;    
+    border-radius: 2%;
+}
+
+.title {
+    font-size: x-large;
+    margin: 0%;
+}
+
+.sub-info {
+    padding: 0%;
+}
+
+.sub-info li {
+    display: inline;
+    opacity: .7;    
+}
+
+.sub-info li::after {    
+    content: '|';
+    margin: 0px 8px;
+}
+
+button.action {
+    color: #3c312d;
+}
+
+button.action:hover {
+    opacity: 1;
+}

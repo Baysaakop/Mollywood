@@ -10,7 +10,7 @@ const MovieList = (props) => {
 
     const api_key = process.env.REACT_APP_API;
     const [movies, setMovies] = useState([]);
-    const [orderMode, setOrderMode] = useState('rating');
+    const [orderMode, setOrderMode] = useState('releasedate');
 
     const orderByAlphabetAsc = (data) => {
         return data.sort((a, b) => a.title.localeCompare(b.title));
@@ -36,30 +36,26 @@ const MovieList = (props) => {
         return data.sort((a, b) => b.vote_average - a.vote_average);
     }
 
-    const selectOrderMode = (mode) => {   
-        console.log(mode);             
-        order(mode);
+    const selectOrderMode = (mode) => {                     
         setOrderMode(mode);
-    }
-
-    const order = (mode) => {        
-        if (mode == 'alphabet') {
+        if (mode === 'alphabet') {
             setMovies(orderByAlphabetAsc(movies));
         }
-        else if (mode == 'rating') {
+        else if (mode === 'rating') {
             setMovies(orderByRatingDesc(movies));
         }
-        else if (mode == 'releasedate') {
+        else if (mode === 'releasedate') {
             setMovies(orderByDateDesc(movies));
-        }
+        }        
     }
 
-    useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}&language=en-US&page=1`)
+    useEffect(() => {        
+        setOrderMode('releasedate');
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=1`)
         .then(data => data.json())
-        .then(data => {
+        .then(data => {            
             console.log(data.results);
-            setMovies(data.results);            
+            setMovies(orderByDateDesc(data.results));       
         })
     }, []);    
 
@@ -67,27 +63,25 @@ const MovieList = (props) => {
         if (name != '') {
             fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${name}`)
             .then(data => data.json()
-            .then(data => { 
+            .then(data => {                 
                 let filterdata = data.results.filter((movie) => (movie.release_date >= releasefrom && movie.release_date < releaseto && movie.vote_average >= ratingmin && movie.vote_average < ratingmax));
-                if (filterdata != null && filterdata.length > 0)
-                {
-                    setMovies(filterdata);                                        
-                    order(orderMode);
+                if (filterdata !== null && filterdata.length > 0)
+                {                                                               
+                    setMovies(orderByDateDesc(filterdata));                                                              
                 }     
             }));                        
         }        
         else {
-            fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}&language=en-US&page=1`)
+            fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=1`)
             .then(data => data.json())
             .then(data => {
                 let filterdata = data.results.filter((movie) => (movie.release_date >= releasefrom && movie.release_date < releaseto && movie.vote_average >= ratingmin && movie.vote_average < ratingmax));
-                if (filterdata != null && filterdata.length > 0)
-                {
-                    setMovies(filterdata);
-                    order(orderMode);
+                if (filterdata !== null && filterdata.length > 0)
+                {                                             
+                    setMovies(orderByDateDesc(filterdata));                                  
                 }     
             })
-        }                 
+        }                                  
     };
 
     return (
