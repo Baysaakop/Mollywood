@@ -1,6 +1,6 @@
 import React from "react";
 import './MovieCard.css';
-import { Card } from 'antd';
+import { Card, Tooltip } from 'antd';
 import { LikeOutlined, CheckOutlined, PlusOutlined, StarFilled } from '@ant-design/icons';
 import { Link } from "react-router-dom";
 
@@ -15,9 +15,15 @@ const MovieCard = (props) => {
                     style={{ width: 'auto' }}
                     cover={<img alt="example" src={props.poster} />}
                     actions={[
-                        <LikeOutlined key="like" />,
-                        <CheckOutlined key="check" />,
-                        <PlusOutlined key="add" />,
+                        <Tooltip title="Таалагдсан">
+                            <LikeOutlined key="like" />
+                        </Tooltip>,
+                        <Tooltip title="Үзсэн">
+                            <CheckOutlined key="check" />
+                        </Tooltip>,
+                        <Tooltip title="Дараа үзэх">
+                            <PlusOutlined key="add" />
+                        </Tooltip>,
                     ]}
                 >
                     <Meta title={props.title} description={props.releasedate} />                                

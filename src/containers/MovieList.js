@@ -55,7 +55,7 @@ const MovieList = (props) => {
         .then(data => data.json())
         .then(data => {            
             console.log(data.results);
-            setMovies(orderByDateDesc(data.results));       
+            setMovies(data.results);       
         })
     }, []);    
 

@@ -132,6 +132,8 @@ const MovieDetail = (props) => {
                             </Col>      
                             <Tabs defaultActiveKey="1">
                                 <Tabs.TabPane tab="Ерөнхий мэдээлэл" key="1">
+                                    <h3>ТАНИЛЦУУЛГА</h3>
+                                    <p>{movie.overview}</p>
                                     <h3>АГУУЛГА</h3>
                                     <p>{movie.overview}</p>
                                 </Tabs.TabPane>
