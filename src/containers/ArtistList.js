@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Breadcrumb, Row, Col, Select, List } from 'antd';
-import MovieFilterForm from '../components/MovieFilterForm';
+import ArtistFilterForm from '../components/ArtistFilterForm';
 import ArtistCard from '../components/ArtistCard';
 
 const { Option } = Select;
@@ -44,6 +44,31 @@ const ArtistList = (props) => {
             console.log(orderByAlphabetAsc(data.results));
         })
     }, []);    
+
+    const filter = (name) => {                
+        if (name != '') {
+            fetch(`https://api.themoviedb.org/3/search/person?api_key=${api_key}&query=${name}&include_adult=false`)
+            .then(data => data.json()
+            .then(data => {                                 
+                if (data.results !== null && data.results.length > 0)
+                {                                                               
+                    setArtists(orderByAlphabetAsc(data.results));            
+                    console.log(orderByAlphabetAsc(data.results));                                                  
+                }     
+            }));                        
+        }        
+        // else {
+        //     fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=1`)
+        //     .then(data => data.json())
+        //     .then(data => {
+        //         let filterdata = data.results.filter((movie) => (movie.release_date >= releasefrom && movie.release_date < releaseto && movie.vote_average >= ratingmin && movie.vote_average < ratingmax));
+        //         if (filterdata !== null && filterdata.length > 0)
+        //         {                                             
+        //             setMovies(orderByDateDesc(filterdata));                                  
+        //         }     
+        //     })
+        // }                                  
+    };
 
     return (
         <div>            
@@ -99,7 +124,7 @@ const ArtistList = (props) => {
                     /> 
                 </Col>
                 <Col sm={24} md={6}>                    
-                    <MovieFilterForm />
+                    <ArtistFilterForm filter={filter} />
                 </Col>
             </Row>             
         </div>

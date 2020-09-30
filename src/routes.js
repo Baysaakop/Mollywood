@@ -6,6 +6,7 @@ import MovieList from './containers/MovieList';
 import SeriesList from './containers/SeriesList';
 import ArtistList from './containers/ArtistList';
 import MovieDetail from './containers/MovieDetail';
+import ArtistDetail from './containers/ArtistDetail';
 import SignIn from './containers/SignIn';
 import SignUp from './containers/SignUp';
 
@@ -18,6 +19,7 @@ const BaseRouter = () => (
         <Route exact path='/artists' component={ArtistList} />
         {/* Detail View */}
         <Route exact path='/movies/:movieID' component={MovieDetail} />
+        <Route exact path='/artists/:artistID' component={ArtistDetail} />
         {/* User Authentication */}
         <Route exact path='/signin' component={SignIn} />
         <Route exact path='/signup' component={SignUp} />

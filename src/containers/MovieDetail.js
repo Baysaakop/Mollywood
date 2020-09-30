@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './MovieDetail.css';
 import { Breadcrumb, Row, Col, Button, Tooltip, Tabs } from 'antd';
-import { LikeOutlined, CheckOutlined, PlusOutlined, StarOutlined, StarFilled } from '@ant-design/icons';
+import { LikeOutlined, CheckOutlined, PlusOutlined, StarOutlined, ShareAltOutlined, StarFilled, PlayCircleOutlined, CreditCardOutlined } from '@ant-design/icons';
 import { List, Avatar } from 'antd';
 
 const MovieDetail = (props) => {    
@@ -39,6 +39,30 @@ const MovieDetail = (props) => {
         {
             title: 'Emma Stone',
         },
+        {
+            title: 'Christian Bale',
+        },
+        {
+            title: 'Anne Hatheway',
+        },
+        {
+            title: 'Andrew Garfield',
+        },
+        {
+            title: 'Emma Stone',
+        },
+        {
+            title: 'Christian Bale',
+        },
+        {
+            title: 'Anne Hatheway',
+        },
+        {
+            title: 'Andrew Garfield',
+        },
+        {
+            title: 'Emma Stone',
+        },
     ];
 
     return (
@@ -61,6 +85,10 @@ const MovieDetail = (props) => {
                         <Row gutter={[16, 16]}>
                             <Col span={24} md={8}>
                                 <img className="poster" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="movie-cover" />
+                                <div style={{ padding: '16px', border: '1px solid #f0f2f5' }}>
+                                    <Button block type="primary" icon={<PlayCircleOutlined />} style={{ marginBottom: '8px' }}>Трейлер үзэх</Button>                                      
+                                    <Button block danger type="primary" icon={<CreditCardOutlined />}>Тасалбар захиалах</Button>  
+                                </div>                                
                             </Col>
                             <Col span={24} md={16}>
                                 <p className="title">{movie.title}</p>        
@@ -73,28 +101,24 @@ const MovieDetail = (props) => {
                                         )}                                
                                     </li>
                                     <li>{movie.release_date}</li>
-                                </ul>
-                                <Row gutter={[16, 16]}>
-                                    <Col xs={24} sm={24} md={6} lg={6}>
-                                        <Button type="primary">Трейлер үзэх</Button>  
-                                    </Col>       
-                                    <Col xs={24} sm={24} md={18} lg={18}>
-                                        <div className="actioncircles">
-                                            <Tooltip title="Like">
-                                                <Button className="action" shape="circle" icon={<LikeOutlined />} />
-                                            </Tooltip>  
-                                            <Tooltip title="Check">
-                                                <Button className="action" shape="circle" icon={<CheckOutlined />} />
-                                            </Tooltip>      
-                                            <Tooltip title="Watch Later">
-                                                <Button className="action" shape="circle" icon={<PlusOutlined />} />
-                                            </Tooltip>       
-                                            <Tooltip title="Rate">
-                                                <Button className="action" shape="circle" icon={<StarOutlined />} />
-                                            </Tooltip>  
-                                        </div>                                        
-                                    </Col>                                                                    
-                                </Row>                                
+                                </ul>                                
+                                <div className="actioncircles">
+                                    <Tooltip title="Like">
+                                        <Button className="action" shape="circle" icon={<LikeOutlined />} />
+                                    </Tooltip>  
+                                    <Tooltip title="Check">
+                                        <Button className="action" shape="circle" icon={<CheckOutlined />} />
+                                    </Tooltip>      
+                                    <Tooltip title="Watch Later">
+                                        <Button className="action" shape="circle" icon={<PlusOutlined />} />
+                                    </Tooltip>       
+                                    <Tooltip title="Rate">
+                                        <Button className="action" shape="circle" icon={<StarOutlined />} />
+                                    </Tooltip>  
+                                    <Tooltip title="Share">
+                                        <Button className="action" shape="circle" icon={<ShareAltOutlined />} />
+                                    </Tooltip>   
+                                </div>                                                                                                                                                
                                 <p>
                                     <StarFilled style={{ fontSize: '24px', color: '#AAF50A' }} />     
                                     <span style={{ fontSize: '18px' }}> 
@@ -110,70 +134,51 @@ const MovieDetail = (props) => {
                                                 <span key={prod.id}>{prod.name} | </span>
                                             )}                                       
                                 </p>
-                                {/* <p>
-                                    Продюсер: James Cameron
-                                </p>
-                                <p>
-                                    Найруулагч: James Cameron
-                                </p>
-                                <p>
-                                    Нээлтийн огноо: {movie.release_date}
-                                </p>
-                                <p>
-                                    Улс: {countries.map((country) => 
-                                        <span key={country.id}>{country.name}, </span>
-                                    )}
-                                </p>
-                                <p>
-                                    Хэл: {languages.map((language) => 
-                                        <span key={language.id}>{language.name} </span>
-                                    )}
-                                </p> */}                                
-                            </Col>      
-                            <Tabs defaultActiveKey="1">
-                                <Tabs.TabPane tab="Ерөнхий мэдээлэл" key="1">
-                                    <h3>ТАНИЛЦУУЛГА</h3>
-                                    <p>{movie.overview}</p>
-                                    <h3>АГУУЛГА</h3>
-                                    <p>{movie.overview}</p>
-                                </Tabs.TabPane>
-                                <Tabs.TabPane tab="Баг бүрэлдэхүүн" key="2">
-                                    <h3>Баг бүрэлдэхүүн</h3>
-                                    <List
-                                        itemLayout="horizontal"
-                                        dataSource={actorsdata}
-                                        renderItem={item => (
-                                            <List.Item>
-                                                <List.Item.Meta
-                                                    avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                                                    title={<a href="https://ant.design">{item.title}</a>}                                                    
-                                                />
-                                            </List.Item>
-                                        )}
-                                    />
-                                </Tabs.TabPane>
-                                <Tabs.TabPane tab="Жүжигчид" key="3">
-                                    <h3>Гол дүрд</h3>
-                                    <List
-                                        itemLayout="horizontal"
-                                        dataSource={actorsdata}
-                                        renderItem={item => (
-                                            <List.Item>
-                                                <List.Item.Meta
-                                                    avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                                                    title={<a href="https://ant.design">{item.title}</a>}                                                    
-                                                />
-                                            </List.Item>
-                                        )}
-                                    />
-                                </Tabs.TabPane>
-                                <Tabs.TabPane tab="Шүүмж сэтгэгдэл" key="4">
-                                    Review
-                                </Tabs.TabPane>
-                                <Tabs.TabPane tab="Зураг трейлер" key="5">
-                                    Зураг
-                                </Tabs.TabPane>
-                            </Tabs>                        
+                                <Tabs defaultActiveKey="1">
+                                    <Tabs.TabPane tab="Мэдээлэл" key="1">
+                                        <h3>Танилцуулга</h3>
+                                        <p>{movie.overview}</p>
+                                        <h3>Агуулга</h3>
+                                        <p>{movie.overview}</p>
+                                    </Tabs.TabPane>
+                                    <Tabs.TabPane tab="Бүрэлдэхүүн" key="2">
+                                        <h3>Бүрэлдэхүүн</h3>
+                                        <List
+                                            itemLayout="horizontal"
+                                            dataSource={actorsdata}
+                                            renderItem={item => (
+                                                <List.Item>
+                                                    <List.Item.Meta
+                                                        avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                                                        title={<a href="https://ant.design">{item.title}</a>}                                                    
+                                                    />
+                                                </List.Item>
+                                            )}
+                                        />
+                                    </Tabs.TabPane>
+                                    <Tabs.TabPane tab="Жүжигчид" key="3">
+                                        <h3>Гол дүрд</h3>
+                                        <List
+                                            itemLayout="horizontal"
+                                            dataSource={actorsdata}
+                                            renderItem={item => (
+                                                <List.Item>
+                                                    <List.Item.Meta
+                                                        avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                                                        title={<a href="https://ant.design">{item.title}</a>}                                                    
+                                                    />
+                                                </List.Item>
+                                            )}
+                                        />
+                                    </Tabs.TabPane>
+                                    <Tabs.TabPane tab="Сэтгэгдэл" key="4">
+                                        Review
+                                    </Tabs.TabPane>
+                                    <Tabs.TabPane tab="Зураг" key="5">
+                                        Зураг
+                                    </Tabs.TabPane>
+                                </Tabs>                                 
+                            </Col>                                                        
                         </Row>                                                                      
                     </Col>
                     <Col sm={2} md={4}></Col>
