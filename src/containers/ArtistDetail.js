@@ -55,10 +55,10 @@ const ArtistDetail = (props) => {
                                 <Row gutter={[16, 16]}>    
                                     <Col xs={24} sm={24} md={18} lg={18}>
                                         <div className="actioncircles">
-                                            <Tooltip title="Like">
+                                            <Tooltip title="Favorite">
                                                 <Button className="action" shape="circle" icon={<HeartOutlined />} />
                                             </Tooltip>  
-                                            <Tooltip title="Check">
+                                            <Tooltip title="Follow">
                                                 <Button className="action" shape="circle" icon={<UserAddOutlined />} />
                                             </Tooltip>      
                                         </div>                                        

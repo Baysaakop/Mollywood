@@ -65,8 +65,8 @@ const CustomMenu = (props) => {
                         <Menu.Item key="artists">
                             <Link to="/artists">УРАН БҮТЭЭЛЧ</Link>
                         </Menu.Item>
-                        <Menu.Item key="news">
-                            <Link to="/news">МЭДЭЭ</Link>
+                        <Menu.Item key="blogs">
+                            <Link to="/blogs">БЛОГ</Link>
                         </Menu.Item>        
                         <Menu.Item key="search">                   
                             ХАЙХ 
@@ -100,8 +100,8 @@ const CustomMenu = (props) => {
                         <Menu.Item key="artists">
                             <Link to="/artists">УРАН БҮТЭЭЛЧ</Link>
                         </Menu.Item>
-                        <Menu.Item key="news">
-                            <Link to="/news">МЭДЭЭ</Link>
+                        <Menu.Item key="blogs">
+                            <Link to="/blogs">БЛОГ</Link>
                         </Menu.Item>        
                         <Menu.Item key="signin" style={{ float: 'right' }} onClick={showSignInModal}>
                             НЭВТРЭХ
