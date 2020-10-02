@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import './MovieDetail.css';
+import './ContentDetail.css';
 import { Breadcrumb, Row, Col, Button, Tooltip, Tabs } from 'antd';
 import { LikeOutlined, CheckOutlined, PlusOutlined, StarOutlined, ShareAltOutlined, StarFilled, PlayCircleOutlined, CreditCardOutlined } from '@ant-design/icons';
 import { List, Avatar } from 'antd';
 
-const MovieDetail = (props) => {    
+const ContentDetail = (props) => {    
 
     const api_key = process.env.REACT_APP_API;
-    const [movie, setMovie] = useState([]);
+    const [content, setContent] = useState([]);
     const [genres, setGenres] = useState([]);
     const [productions, setProductions] = useState([]);
     const [countries, setCountries] = useState([]);
     const [languages, setLanguages] = useState([]);
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/movie/${props.match.params.movieID}?api_key=${api_key}&language=en-US`)
+        fetch(`https://api.themoviedb.org/3/${props.type}/${props.match.params.movieID}?api_key=${api_key}&language=en-US`)
         .then(data => data.json())
         .then(data => {
             console.log(data);          
-            setMovie(data);
+            setContent(data);
             setGenres(data.genres);
             setProductions(data.production_companies);
             setCountries(data.production_countries);
@@ -38,31 +38,7 @@ const MovieDetail = (props) => {
         },
         {
             title: 'Emma Stone',
-        },
-        {
-            title: 'Christian Bale',
-        },
-        {
-            title: 'Anne Hatheway',
-        },
-        {
-            title: 'Andrew Garfield',
-        },
-        {
-            title: 'Emma Stone',
-        },
-        {
-            title: 'Christian Bale',
-        },
-        {
-            title: 'Anne Hatheway',
-        },
-        {
-            title: 'Andrew Garfield',
-        },
-        {
-            title: 'Emma Stone',
-        },
+        },        
     ];
 
     return (
@@ -72,10 +48,10 @@ const MovieDetail = (props) => {
                     <a href="/">Нүүр</a>
                 </Breadcrumb.Item>
                 <Breadcrumb.Item>
-                    <a href="/movies">Кино жагсаалт</a>
+                    <a href={`/${props.link}`}>{props.keyword}</a>
                 </Breadcrumb.Item>
                 <Breadcrumb.Item>
-                    {movie.title}
+                    {content.title}
                 </Breadcrumb.Item>
             </Breadcrumb> 
             <div className="main">
@@ -84,23 +60,23 @@ const MovieDetail = (props) => {
                     <Col sm={20} md={16}>
                         <Row gutter={[16, 16]}>
                             <Col span={24} md={8}>
-                                <img className="poster" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="movie-cover" />
+                                <img className="poster" src={`https://image.tmdb.org/t/p/w500${content.poster_path}`} alt="movie-cover" />
                                 <div style={{ padding: '16px', border: '1px solid #f0f2f5' }}>
                                     <Button block type="primary" icon={<PlayCircleOutlined />} style={{ marginBottom: '8px' }}>Трейлер үзэх</Button>                                      
                                     <Button block danger type="primary" icon={<CreditCardOutlined />}>Тасалбар захиалах</Button>  
                                 </div>                                
                             </Col>
                             <Col span={24} md={16}>
-                                <p className="title">{movie.title}</p>        
+                                <p className="title">{content.title}</p>        
                                 <ul className="sub-info">
                                     <li>PG-13</li>
-                                    <li>{movie.runtime} минут</li>
+                                    <li>{content.runtime} минут</li>
                                     <li>                                    
                                         {genres.map((genre) => 
                                             <span key={genre.id}>{genre.name} </span>
                                         )}                                
                                     </li>
-                                    <li>{movie.release_date}</li>
+                                    <li>{content.release_date}</li>
                                 </ul>                                
                                 <div className="actioncircles">
                                     <Tooltip title="Like">
@@ -122,11 +98,11 @@ const MovieDetail = (props) => {
                                 <p>
                                     <StarFilled style={{ fontSize: '24px', color: '#AAF50A' }} />     
                                     <span style={{ fontSize: '18px' }}> 
-                                        {movie.vote_average}/
+                                        {content.vote_average}/
                                         <span style={{ fontSize: '14px', opacity: .8 }}>10</span>
                                     </span>    
                                     <span style={{ fontSize: '14px', marginLeft: '16px' }}>
-                                        (Нийт {movie.vote_count} үнэлгээ)
+                                        (Нийт {content.vote_count} үнэлгээ)
                                     </span>
                                 </p>             
                                 <p>
@@ -136,10 +112,9 @@ const MovieDetail = (props) => {
                                 </p>
                                 <Tabs defaultActiveKey="1">
                                     <Tabs.TabPane tab="Мэдээлэл" key="1">
-                                        <h3>Танилцуулга</h3>
-                                        <p>{movie.overview}</p>
+                                        <h3>Танилцуулга</h3>                                        
                                         <h3>Агуулга</h3>
-                                        <p>{movie.overview}</p>
+                                        <p>{content.overview}</p>
                                     </Tabs.TabPane>
                                     <Tabs.TabPane tab="Бүрэлдэхүүн" key="2">
                                         <h3>Бүрэлдэхүүн</h3>
@@ -182,12 +157,10 @@ const MovieDetail = (props) => {
                         </Row>                                                                      
                     </Col>
                     <Col sm={2} md={4}></Col>
-                </Row>
-
-                {/* <img className="backdrop" src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt="movie-cover" /> */}                
+                </Row>            
             </div>
         </div>
     );
 };
 
-export default MovieDetail;
+export default ContentDetail;

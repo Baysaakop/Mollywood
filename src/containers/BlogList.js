@@ -1,6 +1,6 @@
 import React from 'react';
 import { Breadcrumb, Row, Col, List, Avatar, Space } from 'antd';
-import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons';
+import { MessageOutlined, LikeOutlined, StarOutlined, ShareAltOutlined } from '@ant-design/icons';
 
 const listData = [];
 for (let i = 0; i < 23; i++) {
@@ -42,21 +42,16 @@ const BlogList = (props) => {
                         onChange: page => {
                             console.log(page);
                         },
-                        pageSize: 3,
+                        pageSize: 6,
                         }}
-                        dataSource={listData}
-                        footer={
-                        <div>
-                            <b>ant design</b> footer part
-                        </div>
-                        }
+                        dataSource={listData}                        
                         renderItem={item => (
                         <List.Item
                             key={item.title}
-                            actions={[
-                                <IconText icon={StarOutlined} text="156" key="list-vertical-star-o" />,
+                            actions={[                                
                                 <IconText icon={LikeOutlined} text="156" key="list-vertical-like-o" />,
-                                <IconText icon={MessageOutlined} text="2" key="list-vertical-message" />,
+                                <IconText icon={MessageOutlined} text="12" key="list-vertical-message" />,
+                                <IconText icon={ShareAltOutlined} text="39" key="list-vertical-share" />,
                             ]}
                             extra={
                                 <img
@@ -68,16 +63,14 @@ const BlogList = (props) => {
                     >
                         <List.Item.Meta
                             avatar={<Avatar src={item.avatar} />}
-                            title={<a href={item.href}>{item.title}</a>}
-                            description={item.description}
+                            title={<a href={item.href}>{item.title}</a>}                            
                         />
                         {item.content}
                         </List.Item>
                         )}
                     /> 
                 </Col>
-                <Col sm={24} md={6}>                    
-                    
+                <Col sm={24} md={6}>                                        
                 </Col>
             </Row>  
         </div>

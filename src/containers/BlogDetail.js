@@ -7,18 +7,18 @@ import { List, Avatar } from 'antd';
 const ArtistDetail = (props) => {    
 
     const api_key = process.env.REACT_APP_API;
-    const [artist, setArtist] = useState([]);
-    const [genres, setGenres] = useState([]);
-    const [productions, setProductions] = useState([]);
-    const [countries, setCountries] = useState([]);
-    const [languages, setLanguages] = useState([]);
+    const [blog, setBlog] = useState([]);
+    // const [genres, setGenres] = useState([]);
+    // const [productions, setProductions] = useState([]);
+    // const [countries, setCountries] = useState([]);
+    // const [languages, setLanguages] = useState([]);
 
     useEffect(() => {
         fetch(`https://api.themoviedb.org/3/person/${props.match.params.artistID}?api_key=${api_key}&language=en-US`)
         .then(data => data.json())
         .then(data => {
             console.log(data);          
-            setArtist(data);
+            setBlog(data);
             // setGenres(data.genres);
             // setProductions(data.production_companies);
             // setCountries(data.production_countries);
@@ -33,14 +33,14 @@ const ArtistDetail = (props) => {
                     <a href="/">Нүүр</a>
                 </Breadcrumb.Item>
                 <Breadcrumb.Item>
-                    <a href="/artists">Уран бүтээлчид</a>
+                    <a href="/blogs">Блог</a>
                 </Breadcrumb.Item>
                 <Breadcrumb.Item>
-                    {artist.name}
+                    {blog.name}
                 </Breadcrumb.Item>
             </Breadcrumb> 
             <div className="main">
-                <Row>
+                {/* <Row>
                     <Col sm={2} md={4}></Col>
                     <Col sm={20} md={16}>
                         <Row gutter={[16, 16]}>
@@ -87,9 +87,9 @@ const ArtistDetail = (props) => {
                     </Col>
                     <Col sm={2} md={4}></Col>
                 </Row>               
-            </div>
+            </div> */}
         </div>
     );
 };
 
-export default ArtistDetail;
+export default BlogDetail;
