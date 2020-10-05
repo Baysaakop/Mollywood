@@ -19,7 +19,7 @@ const BaseRouter = () => (
         <Route exact path='/blogs' component={BlogList} />
         {/* Detail View */}
         {/* <Route exact path='/movies/:movieID' component={MovieDetail} /> */}
-        <Route exact path='/movies/:movieID' render={(props) => (<ContentDetail {...props} type="movie" link="movies" keyword="Кино" />)} />
+        <Route exact path='/movies/:id' render={(props) => (<ContentDetail {...props} type="movie" link="movies" keyword="Кино" />)} />
         <Route exact path='/artists/:artistID' component={ArtistDetail} />
         {/* User Authentication */}
         <Route exact path='/signin' component={SignIn} />

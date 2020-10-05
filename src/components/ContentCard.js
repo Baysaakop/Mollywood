@@ -20,34 +20,44 @@ const ContentCard = (props) => {
                     hoverable                      
                     style={{ width: 'auto' }}
                     cover={<img alt="example" src={props.image} />}
-                    actions={
-                        (type === 'movies' || type === 'series') ? (
-                        [
-                            <Tooltip title="Таалагдсан">
-                                <LikeOutlined key="favorite" />
-                            </Tooltip>,
-                            <Tooltip title="Үзсэн">
-                                <CheckOutlined key="check" />
-                            </Tooltip>,
-                            <Tooltip title="Дараа үзэх">
-                                <PlusOutlined key="add" />
-                            </Tooltip>                                        
-                        ]) : ([
-                            <Tooltip title="Таалагдсан">
-                                <HeartOutlined key="favorite" />
-                            </Tooltip>,
-                            <Tooltip title="Дагах">
-                                <UserAddOutlined key="follow" />
-                            </Tooltip>,
-                            <Tooltip title="Дараа үзэх">
-                                <EllipsisOutlined key="more" />
-                            </Tooltip>
-                        ])}
+                    actions={[
+                        <Tooltip title="Таалагдсан">
+                            <LikeOutlined key="favorite" />
+                        </Tooltip>,
+                        <Tooltip title="Үзсэн">
+                            <CheckOutlined key="check" />
+                        </Tooltip>,
+                        <Tooltip title="Дараа үзэх">
+                            <PlusOutlined key="add" />
+                        </Tooltip>
+                        // (type === 'movies' || type === 'series') ? (
+                        // [
+                        //         <Tooltip title="Таалагдсан">
+                        //             <LikeOutlined key="favorite" />
+                        //         </Tooltip>,
+                        //         <Tooltip title="Үзсэн">
+                        //             <CheckOutlined key="check" />
+                        //         </Tooltip>,
+                        //         <Tooltip title="Дараа үзэх">
+                        //             <PlusOutlined key="add" />
+                        //         </Tooltip>                                        
+                        // ]) : ([
+                        //     <Tooltip title="Таалагдсан">
+                        //         <HeartOutlined key="favorite" />
+                        //     </Tooltip>,
+                        //     <Tooltip title="Дагах">
+                        //         <UserAddOutlined key="follow" />
+                        //     </Tooltip>,
+                        //     <Tooltip title="Дараа үзэх">
+                        //         <EllipsisOutlined key="more" />
+                        //     </Tooltip>
+                        // ])
+                    ]}
                 >
                     <Tooltip title={props.name}>
                         <Meta title={props.name} description={props.date} /> 
                     </Tooltip>                               
-                    <div style={{ marginTop: '5px' }}>                    
+                    <div style={{ marginTop: '5px', fontSize: '14px' }}>                    
                         <span><StarFilled style={{ color: '#AAF50A', fontSize: '18px' }} /> {props.rating}/10</span>                        
                     </div>                                    
                 </Card>

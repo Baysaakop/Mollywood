@@ -1,37 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { Form, Input, Button, Select, InputNumber, DatePicker } from 'antd';
 import './FilterForm.css';
-import Genres from '../genres.json';
+import genrelist from '../genres.json';
 
 const { Option } = Select;
 const { RangePicker } = DatePicker;
 
-const FilterForm = (props) => {
+const ContentFilterForm = (props) => {
     
     const api_key = process.env.REACT_APP_API;
     const [genres, setGenres] = useState([]);
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${api_key}&language=en-US`)
-        .then(data => data.json())
-        .then(data => {            
-            setGenres(data.genres);
-        })
+        // fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${api_key}&language=en-US`)
+        // .then(data => data.json())
+        // .then(data => {            
+        //     setGenres(data.genres);
+        // })
+        setGenres(genrelist);
     }, []);        
 
-    const onFinish = values => {        
-        if (props.type === 'movies') {
-            filterMovies(values);
-        }
-        else if (props.type === 'series') {
-            filterSeries(values);
-        }
-        else if (props.type === 'artists') {
-            filterArtists(values);
-        }
-    };
-
-    const filterMovies = (values) => {        
+    const onFinish = values => {       
         let name = checkInput(values['name']);        
         let genre = checkInput(values['genre']);                           
         let yearfrom = checkInput(values['yearfrom']);
@@ -43,7 +32,7 @@ const FilterForm = (props) => {
             result = result.filter((content) => content.title.toLowerCase().includes(name.toLowerCase()));            
         }       
         if (genre !== '' && genre !== 0) {                 
-            result = result.filter((content) => content.genre_ids.includes(genre));            
+            result = result.filter((content) => content.genres.includes(genre));            
         }        
         if (yearfrom !== '') {
             var datefrom = new Date(yearfrom, 0, 1);            
@@ -54,50 +43,13 @@ const FilterForm = (props) => {
             result = result.filter((content) => (new Date(content.release_date)) < dateto);
         }
         if (ratingmin !== '') {                      
-            result = result.filter((content) => (content.vote_average) > ratingmin);
+            result = result.filter((content) => (content.score) > ratingmin);
         }
         if (ratingmax !== '') {                      
-            result = result.filter((content) => (content.vote_average) < ratingmax);
+            result = result.filter((content) => (content.score) < ratingmax);
         }
-        props.filter(result);
-    }
-
-    const filterSeries = (values) => {        
-        let name = checkInput(values['name']);        
-        let genre = checkInput(values['genre']);                           
-        let yearfrom = checkInput(values['yearfrom']);
-        let yearto = checkInput(values['yearto']);
-        let ratingmin = checkInput(values['ratingmin']);
-        let ratingmax = checkInput(values['ratingmax']);
-        let result = props.contents;        
-        if (name !== '') {
-            result = props.contents.filter((content) => content.name.toLowerCase().includes(name.toLowerCase()));            
-        }       
-        if (genre !== '' && genre !== 0) {                 
-            result = result.filter((content) => content.genre_ids.includes(genre));            
-        }        
-        if (yearfrom !== '') {
-            var datefrom = new Date(yearfrom, 0, 1);            
-            result = result.filter((content) => (new Date(content.first_air_date)) > datefrom);
-        }
-        if (yearto !== '') {
-            var dateto = new Date(yearto, 11, 31);            
-            result = result.filter((content) => (new Date(content.first_air_date)) < dateto);
-        }
-        if (ratingmin !== '') {                      
-            result = result.filter((content) => (content.vote_average) > ratingmin);
-        }
-        if (ratingmax !== '') {                      
-            result = result.filter((content) => (content.vote_average) < ratingmax);
-        }
-        props.filter(result);
-    }
-
-    const filterArtists = (values) => {
-        let name = checkInput(values['name']);
-        let result = props.contents.filter((content) => content.name.toLowerCase().includes(name.toLowerCase()));
-        props.filter(result);
-    }
+        props.filter(result); 
+    };
 
     const checkInput = (input) => {        
         if (input === undefined)
@@ -129,7 +81,7 @@ const FilterForm = (props) => {
                                 allowClear
                             >
                                 <Option key={0} value={0}>Бүх</Option>
-                                {Genres.map((genre) => 
+                                {genres.map((genre) => 
                                     <Option key={genre.id} value={genre.id}>{genre.name_mn}</Option>
                                 )}
                             </Select>
@@ -174,19 +126,6 @@ const FilterForm = (props) => {
                         </Form.Item>     
                     </Form.Item> 
                 )}
-                
-                {/*    
-                <Form.Item name="release-range-picker" label="Нээлт">
-                    <RangePicker />
-                </Form.Item>   
-                <Form.Item label="Үнэлгээ">
-                    <Form.Item name="ratingmin" style={{ display: 'inline-block', width: 'calc(50% - 8px)' }}>
-                        <InputNumber defaultValue={0} min={0} max={10} />
-                    </Form.Item>
-                    <Form.Item name="ratingmax" style={{ display: 'inline-block', width: 'calc(50% - 8px)', margin: '0 8px' }}>
-                        <InputNumber defaultValue={10} min={0} max={10} />
-                    </Form.Item>
-                </Form.Item>       */}
                 <Form.Item className="formrow">
                     <Button type="primary" htmlType="submit" className="search-button">
                         Хайх
@@ -197,4 +136,4 @@ const FilterForm = (props) => {
     );
 }
 
-export default FilterForm;
+export default ContentFilterForm;

@@ -2,6 +2,8 @@ div.ant-card-body {
     padding: 8px;
 }
 
-.ant-card-meta-detail > div:not(:last-child) {
-    margin-bottom: 0px;
+
+div.ant-card-meta-detail > div:not(:last-child) {
+    margin-bottom: 0px;    
+    font-size: 14px;
 }

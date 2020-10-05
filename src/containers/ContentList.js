@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Breadcrumb, Col, List, Row, Select } from 'antd';
 import ContentCard from '../components/ContentCard';
-import FilterForm from '../components/FilterForm';
-import OrderForm from '../components/OrderForm';
+import ContentFilterForm from '../components/ContentFilterForm';
 import movielist from '../movielist.json';
 
 const { Option } = Select;
@@ -11,12 +10,13 @@ const ContentList = (props) => {
 
     const api_key = process.env.REACT_APP_API;
     const [type, setType] = useState('');
+    const [orderMode, setOrderMode] = useState('releasedate');
     const [allContents, setAllContents] = useState([]);    
     const [contents, setContents] = useState([]);        
 
     useEffect(() => {                
-        setAllContents(movielist);
-        setContents(movielist);
+        setAllContents(orderByReleaseDate(movielist));
+        setContents(orderByReleaseDate(movielist));
         setType(props.link); 
         // fetch(`https://api.themoviedb.org/3/${props.type}/popular?api_key=${api_key}&language=en-US&page=1`)
         // .then(data => data.json())
@@ -28,52 +28,38 @@ const ContentList = (props) => {
         // })                
     }, []);    
 
-    const getContent = (item) => {
-        if (type === 'movies') {
-            return (
-                <ContentCard                                    
-                    id={item.id}                            
-                    type={type}        
-                    name={item.name} 
-                    image={item.image}  
-                    rating={item.score}
-                    date={item.release_date}
-                />
-            );
+    const selectOrderMode = value => {        
+        setOrderMode(value);
+        if (value === 'title') {
+            orderByTitle(contents);
         }
-        else if (type === 'series') {
-            return (
-                <ContentCard                                    
-                    id={item.id}                            
-                    type={type}        
-                    name={item.name} 
-                    image={`https://image.tmdb.org/t/p/w500${item.poster_path}`}  
-                    rating={item.vote_average}
-                    date={item.first_air_date}
-                />
-            );
+        else if (value === 'rating') {
+            orderByScore(contents);
         }
-        else if (type === 'artists') {
-            return (
-                <ContentCard                                    
-                    id={item.id}                            
-                    type={type}        
-                    name={item.name} 
-                    image={`https://image.tmdb.org/t/p/w500${item.profile_path}`}  
-                    rating={item.popularity}
-                    date={item.first_air_date}
-                />
-            );
+        else if (value === 'releasedate') {
+            orderByReleaseDate(contents);
         }
+    };
+
+    const orderByTitle = (data) => {        
+        return data.sort((a, b) => a.title.localeCompare(b.title));
     }
+
+    const orderByReleaseDate = (data) => {
+        return data.sort((a, b) => new Date(b.release_date).getTime() - new Date(a.release_date).getTime());
+    }
+
+    const orderByScore = (data) => {        
+        return data.sort((a, b) => b.score - a.score);
+    }    
 
     const filter = (result) => {    
         setContents(result);                             
     };
- 
-    const order = (result) => {                
-        setContents(result);        
-    };
+
+    const getYearFromDate = (date) => {
+        return date.slice(0, 4);
+    }
 
     return (
         <div>
@@ -92,12 +78,11 @@ const ContentList = (props) => {
                             <h3>Нийт: {contents.length} {props.keyword}</h3>
                         </div>
                         <div>
-                            <OrderForm
-                                type={type}
-                                keyword={props.keyword}
-                                contents={contents}
-                                order={order}
-                            />
+                            <Select defaultValue={orderMode} style={{ width: 250 }} onChange={selectOrderMode}>   
+                                <Option value="title">Үсгийн дараалал</Option>
+                                <Option value="rating">Үнэлгээгээр</Option>
+                                <Option value="releasedate">Нээлтийн огноо</Option>  
+                            </Select>
                         </div>
                     </div>
                     <List
@@ -119,13 +104,20 @@ const ContentList = (props) => {
                         }}
                         renderItem={item => (
                             <List.Item>
-                                {getContent(item)}                          
+                                <ContentCard                                    
+                                    id={item.id}                            
+                                    type={type}        
+                                    name={item.title} 
+                                    image={item.image}  
+                                    rating={item.score}
+                                    date={getYearFromDate(item.release_date)}
+                                />                         
                             </List.Item>
                         )}
                     /> 
                 </Col>
                 <Col sm={24} md={6}>                    
-                    <FilterForm 
+                    <ContentFilterForm 
                         type={type}
                         keyword={props.keyword}
                         contents={allContents}
