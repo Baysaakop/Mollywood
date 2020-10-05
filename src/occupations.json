@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "name": "Producer",
+        "name_mn": "Продюсер"
+    },
+    {
+        "id": 2,
+        "name": "Director",
+        "name_mn": "Найруулагч"
+    },
+    {
+        "id": 3,
+        "name": "Screenwriter",
+        "name_mn": "Кино зохиолч"
+    },
+    {
+        "id": 4,
+        "name": "Production Designer",
+        "name_mn": "Зураач"
+    },
+    {
+        "id": 5,
+        "name": "Costume Designer",
+        "name_mn": "Нүүр хувиргагч"
+    },
+    {
+        "id": 6,
+        "name": "Cinematographer",
+        "name_mn": "Зураглаач"
+    },
+    {
+        "id": 7,
+        "name": "Editor",
+        "name_mn": "Эвлүүлэгч"
+    },
+    {
+        "id": 8,
+        "name": "Music composer",
+        "name_mn": "Хөгжмийн зохиолч"
+    },
+    {
+        "id": 8,
+        "name": "Sound engineer",
+        "name_mn": "Дууны оператор"
+    },
+]

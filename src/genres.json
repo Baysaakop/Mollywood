@@ -1,0 +1,87 @@
+[
+    {
+        "id": 1,
+        "name": "Action",
+        "name_mn": "Тулаант"
+    },
+    {
+        "id": 2,
+        "name": "Adventure",
+        "name_mn": "Адал явдалт"  
+    },
+    {
+        "id": 3,
+        "name": "Comedy",
+        "name_mn": "Инээдмийн"   
+    },
+    {
+        "id": 4,
+        "name": "Crime",
+        "name_mn": "Гэмт хэрэг"   
+    },
+    {
+        "id": 5,
+        "name": "Drama",
+        "name_mn": "Драм"   
+    },
+    {
+        "id": 6,
+        "name": "Family",
+        "name_mn": "Гэр бүлийн"   
+    },
+    {
+        "id": 7,
+        "name": "Fantasy",
+        "name_mn": "Зөгнөлт"   
+    },
+    {
+        "id": 8,
+        "name": "Historical",
+        "name_mn": "Түүхэн"   
+    },
+    {
+        "id": 9,
+        "name": "Horror",
+        "name_mn": "Аймшгийн"   
+    },
+    {
+        "id": 10,
+        "name": "Musical",
+        "name_mn": "Хөгжмийн"   
+    },
+    {
+        "id": 11,
+        "name": "Mystery",
+        "name_mn": "Нууцлаг"   
+    },
+    {
+        "id": 12,
+        "name": "Romance",
+        "name_mn": "Хайр дурлал"   
+    },
+    {
+        "id": 13,
+        "name": "Sci-fi",
+        "name_mn": "ШУ-ны уран зөгнөглт"   
+    },
+    {
+        "id": 14,
+        "name": "Thriller",
+        "name_mn": "Сэтгэхүйн аймшиг"   
+    },
+    {
+        "id": 15,
+        "name": "War",
+        "name_mn": "Дайн"   
+    },
+    {
+        "id": 16,
+        "name": "Western",
+        "name_mn": "Барууны"   
+    },
+    {
+        "id": 17,
+        "name": "Sports",
+        "name_mn": "Спортын"   
+    }        
+]

@@ -3,6 +3,7 @@ import { Breadcrumb, Col, List, Row, Select } from 'antd';
 import ContentCard from '../components/ContentCard';
 import FilterForm from '../components/FilterForm';
 import OrderForm from '../components/OrderForm';
+import movielist from '../movielist.json';
 
 const { Option } = Select;
 
@@ -14,14 +15,17 @@ const ContentList = (props) => {
     const [contents, setContents] = useState([]);        
 
     useEffect(() => {                
-        fetch(`https://api.themoviedb.org/3/${props.type}/popular?api_key=${api_key}&language=en-US&page=1`)
-        .then(data => data.json())
-        .then(data => {            
-            console.log(data.results);
-            setAllContents(data.results.sort((a, b) => new Date(b.first_air_date).getTime() - new Date(a.first_air_date).getTime()));
-            setContents(data.results.sort((a, b) => new Date(b.first_air_date).getTime() - new Date(a.first_air_date).getTime()));
-            setType(props.link);                   
-        })                
+        setAllContents(movielist);
+        setContents(movielist);
+        setType(props.link); 
+        // fetch(`https://api.themoviedb.org/3/${props.type}/popular?api_key=${api_key}&language=en-US&page=1`)
+        // .then(data => data.json())
+        // .then(data => {            
+        //     console.log(data.results);
+        //     setAllContents(data.results.sort((a, b) => new Date(b.first_air_date).getTime() - new Date(a.first_air_date).getTime()));
+        //     setContents(data.results.sort((a, b) => new Date(b.first_air_date).getTime() - new Date(a.first_air_date).getTime()));
+        //     setType(props.link);                   
+        // })                
     }, []);    
 
     const getContent = (item) => {
@@ -30,9 +34,9 @@ const ContentList = (props) => {
                 <ContentCard                                    
                     id={item.id}                            
                     type={type}        
-                    name={item.title} 
-                    image={`https://image.tmdb.org/t/p/w500${item.poster_path}`}  
-                    rating={item.vote_average}
+                    name={item.name} 
+                    image={item.image}  
+                    rating={item.score}
                     date={item.release_date}
                 />
             );

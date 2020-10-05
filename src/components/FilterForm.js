@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Form, Input, Button, Select, InputNumber, DatePicker } from 'antd';
-
 import './FilterForm.css';
+import Genres from '../genres.json';
 
 const { Option } = Select;
 const { RangePicker } = DatePicker;
@@ -129,8 +129,8 @@ const FilterForm = (props) => {
                                 allowClear
                             >
                                 <Option key={0} value={0}>Бүх</Option>
-                                {genres.map((genre) => 
-                                    <Option key={genre.id} value={genre.id}>{genre.name}</Option>
+                                {Genres.map((genre) => 
+                                    <Option key={genre.id} value={genre.id}>{genre.name_mn}</Option>
                                 )}
                             </Select>
                         </Form.Item> 
