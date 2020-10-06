@@ -17,7 +17,7 @@
     {
         "id": 4,
         "name": "Production Designer",
-        "name_mn": "Зураач"
+        "name_mn": "Тайзны зураач"
     },
     {
         "id": 5,
@@ -40,8 +40,8 @@
         "name_mn": "Хөгжмийн зохиолч"
     },
     {
-        "id": 8,
+        "id": 9,
         "name": "Sound engineer",
         "name_mn": "Дууны оператор"
-    },
+    }
 ]

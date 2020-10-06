@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "title": "Мөрөөдлийн Хөлөг Онгоц",
+        "release_date": "2001-01-01",
+        "runningtime": 35,
+        "description": "Мөрөөдлийн Хөлөг Онгоц",
+        "language": "Монгол",
+        "image": "https://cdn.looktv.mn/image/web/vod/2c9f890e57084642015905f893f52403/20161216045134.jpg",
+        "score": 6.8,
+        "genres": [3, 5, 12]
+    },
+    {
+        "id": 2,
+        "title": "Сарны нулимс",
+        "release_date": "2007-01-01",
+        "runningtime": 30,
+        "description": "Өнөөгийн залуусын хайр дурлал, атаа хорсол, амьдралын ээдрээг харуулжээ.",
+        "language": "Монгол",
+        "image": "https://cdn.looktv.mn/image/web/vod/8a01918b71b382950171baa53903229f/20200427075842.jpg",
+        "score": 5.3,
+        "genres": [5, 12]
+    },
+    {
+        "id": 3,
+        "title": "Хэцүү Анги",
+        "release_date": "2009-01-01",
+        "runningtime": 30,
+        "description": "Билгүүн, Дөлгөөн, Тэмүүн нарын үнэнч нөхөрлөл, залуусын хайр дурлалын түүхийг өгүүлнэ.",
+        "language": "Монгол",
+        "image": "https://cdn.looktv.mn/image/web/vod/2c9f890e64127baa01643564be8e27f5/20180625052232.jpg",
+        "score": 6.1,
+        "genres": [5, 12]
+    },
+    {
+        "id": 4,
+        "title": "Тусгай Салаа",
+        "release_date": "2010-01-01",
+        "runningtime": 40,
+        "description": "Эгэл цэрэг эрсийн амьдралын талаар тун сонирхолтой өгүүлсэн 60 ангит кино",
+        "language": "Монгол",
+        "image": "https://cdn.looktv.mn/image/web/vod/2c9f890e65e4988a01660ec6d34b5172/20180925033003.jpg",
+        "score": 6.5,
+        "genres": [3, 5, 12]
+    }
+]

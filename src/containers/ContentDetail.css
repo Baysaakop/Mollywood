@@ -23,7 +23,7 @@ img.poster {
 }
 
 .sub-info li::after {    
-    content: '|';
+    content: '/';
     margin: 0px 8px;
 }
 
@@ -35,10 +35,27 @@ div.actioncircles {
 }
 
 button.action {
-    color: #3c312d;    
+    color: rgba(0, 0, 0, 0.85);
+    border-color: #d9d9d9;
+    opacity: .7;
     margin-right: 16px;
 }
 
 button.action:hover {
+    color: #40a9ff;    
+    border-color: #40a9ff;
     opacity: 1;
+}
+
+button.actionChecked {
+    color: #40a9ff;    
+    border-color: #40a9ff;
+    opacity: 1;
+    margin-right: 16px;
+}
+
+button.actionChecked:hover {
+    color: rgba(0, 0, 0, 0.85);
+    border-color: #d9d9d9;
+    opacity: .7;    
 }

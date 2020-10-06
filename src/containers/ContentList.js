@@ -3,6 +3,7 @@ import { Breadcrumb, Col, List, Row, Select } from 'antd';
 import ContentCard from '../components/ContentCard';
 import ContentFilterForm from '../components/ContentFilterForm';
 import movielist from '../movielist.json';
+import serieslist from '../serieslist.json';
 
 const { Option } = Select;
 
@@ -14,10 +15,16 @@ const ContentList = (props) => {
     const [allContents, setAllContents] = useState([]);    
     const [contents, setContents] = useState([]);        
 
-    useEffect(() => {                
-        setAllContents(orderByReleaseDate(movielist));
-        setContents(orderByReleaseDate(movielist));
-        setType(props.link); 
+    useEffect(() => {                        
+        setType(props.type); 
+        if (props.type === 'movies') {
+            setAllContents(orderByReleaseDate(movielist));
+            setContents(orderByReleaseDate(movielist));
+        }
+        else if (props.type === 'series') {
+            setAllContents(orderByReleaseDate(serieslist));
+            setContents(orderByReleaseDate(serieslist));
+        }
         // fetch(`https://api.themoviedb.org/3/${props.type}/popular?api_key=${api_key}&language=en-US&page=1`)
         // .then(data => data.json())
         // .then(data => {            

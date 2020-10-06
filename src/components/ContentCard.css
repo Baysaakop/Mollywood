@@ -7,3 +7,24 @@ div.ant-card-meta-detail > div:not(:last-child) {
     margin-bottom: 0px;    
     font-size: 14px;
 }
+
+.action {
+    font-size: 32px;
+    color: rgba(0, 0, 0, 0.85);    
+    opacity: .7;
+}
+
+.action:hover {    
+    color: #40a9ff;    
+    opacity: 1;
+}
+
+.actionChecked {
+    color: #40a9ff;    
+    opacity: 1;
+} 
+
+.actionChecked:hover {
+    color: rgba(0, 0, 0, 0.45);    
+    opacity: .7;    
+}

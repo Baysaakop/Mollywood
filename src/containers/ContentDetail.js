@@ -1,17 +1,34 @@
 import React, { useEffect, useState } from 'react';
 import './ContentDetail.css';
-import { Breadcrumb, Row, Col, Button, Tooltip, Tabs } from 'antd';
+import { Breadcrumb, Row, Col, Button, Tooltip, Tabs, Modal, Rate } from 'antd';
 import { LikeOutlined, CheckOutlined, PlusOutlined, StarOutlined, ShareAltOutlined, StarFilled, PlayCircleOutlined, CreditCardOutlined } from '@ant-design/icons';
-import { List, Avatar } from 'antd';
+import { List, Avatar, message } from 'antd';
 
 import movielist from '../movielist.json';
-import genrelist from '../genres.json';
+import genrelist from '../genrelist.json';
 
 const ContentDetail = (props) => {    
 
     const api_key = process.env.REACT_APP_API;
     const [content, setContent] = useState({});
     const [genres, setGenres] = useState([]);
+    const [buttonLike, setButtonLike] = useState('action');
+    const [buttonCheck, setButtonCheck] = useState('action');
+    const [buttonWatchlist, setButtonWatchlist] = useState('action');
+    const [buttonRate, setButtonRate] = useState('action');
+    const [buttonShare, setButtonShare] = useState('action');
+    const [rateVisible, setRateVisible] = useState(false);    
+    const scoreValues = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+    const [score, setScore] = useState(0);    
+
+
+    const showRateModal = () => {
+        setRateVisible(true);
+    }
+
+    const hideRateModal = () => {
+        setRateVisible(false);
+    }
 
     useEffect(() => {
         // fetch(`https://api.themoviedb.org/3/${props.type}/${props.match.params.movieID}?api_key=${api_key}&language=en-US`)
@@ -23,16 +40,56 @@ const ContentDetail = (props) => {
         //     setProductions(data.production_companies);
         //     setCountries(data.production_countries);
         //     setLanguages(data.spoken_languages);
-        // })                         
-        setContent(movielist.find((item) => parseInt(item.id) === parseInt(props.match.params.id)));                    
+        // })      
+        let movie = movielist.find((item) => parseInt(item.id) === parseInt(props.match.params.id));     
+        let moviegenres = movie.genres.map((item) => 
+            genrelist.find((g) => parseInt(g.id) === parseInt(item))
+        );
+        console.log(moviegenres);
+        setGenres(moviegenres);
+        setContent(movie);             
     }, []);    
 
     const checkDate = (date) => {    
         let d = new Date(date);
-        if (d.getMonth() == 0 && d.getDate() == 1) {
+        if (d.getMonth() === 0 && d.getDate() === 1) {
             return d.getFullYear();
         }    
         return date;
+    }
+
+    const like = () => {
+        if (buttonLike === 'action') {
+            setButtonLike('actionChecked');
+        }
+        else {
+            setButtonLike('action');
+        }
+        message.success('Таалагдсан киноны жагсаалтанд нэмэгдлээ.');
+    };
+
+    const check = () => {
+        if (buttonCheck === 'action') {
+            setButtonCheck('actionChecked');
+        }
+        else {
+            setButtonCheck('action');
+        }
+        message.success('Үзсэн киноны жагсаалтанд нэмэгдлээ.');
+    };
+
+    const watchlist = () => {
+        if (buttonWatchlist === 'action') {
+            setButtonWatchlist('actionChecked');
+        }
+        else {
+            setButtonWatchlist('action');
+        }
+        message.success('Үзэх киноны жагсаалтанд нэмэгдлээ.');
+    };
+
+    const rate = (value) => {
+        setScore(value);
     }
 
     const actorsdata = [
@@ -76,33 +133,46 @@ const ContentDetail = (props) => {
                                 </div>                                
                             </Col>
                             <Col span={24} md={16}>
-                                <p className="title">{content.title}</p>        
-                                <ul className="sub-info">
+                                <p className="title">{content.title}</p> 
+                                <p style={{ opacity: '0.7', margin: 0 }}>
+                                    {genres.map((g) =>                       
+                                        <span key={g.id}>{g.name_mn} / </span>
+                                    )}  
+                                </p>       
+                                <ul className="sub-info">                                        
                                     <li>PG-13</li>
                                     <li>{content.runningtime} минут</li>
-                                    {/* <li>                                    
-                                        {genres.map((genre) => 
-                                            <span key={genre.id}>{genre.name} </span>
-                                        )}                                
-                                    </li> */}
                                     <li>{checkDate(content.release_date)}</li>
                                 </ul>                                
                                 <div className="actioncircles">
-                                    <Tooltip title="Like">
-                                        <Button className="action" shape="circle" icon={<LikeOutlined />} />
+                                    <Tooltip title="Таалагдсан">
+                                        <Button className={buttonLike} shape="circle" icon={<LikeOutlined />} onClick={like} />
                                     </Tooltip>  
-                                    <Tooltip title="Check">
-                                        <Button className="action" shape="circle" icon={<CheckOutlined />} />
+                                    <Tooltip title="Үзсэн">
+                                        <Button className={buttonCheck} shape="circle" icon={<CheckOutlined />} onClick={check} />
                                     </Tooltip>      
-                                    <Tooltip title="Watch Later">
-                                        <Button className="action" shape="circle" icon={<PlusOutlined />} />
+                                    <Tooltip title="Дараа үзэх">
+                                        <Button className={buttonWatchlist} shape="circle" icon={<PlusOutlined />} onClick={watchlist} />
                                     </Tooltip>       
-                                    <Tooltip title="Rate">
-                                        <Button className="action" shape="circle" icon={<StarOutlined />} />
+                                    <Tooltip title="Үнэлгээ өгөх">
+                                        <Button className={buttonRate} shape="circle" icon={<StarOutlined />} onClick={showRateModal} />
                                     </Tooltip>  
-                                    <Tooltip title="Share">
-                                        <Button className="action" shape="circle" icon={<ShareAltOutlined />} />
-                                    </Tooltip>   
+                                    <Tooltip title="Хуваалцах">
+                                        <Button className={buttonShare} shape="circle" icon={<ShareAltOutlined />} />
+                                    </Tooltip>
+                                    <Modal
+                                        title="Үнэлгээ өгөх"              
+                                        visible={rateVisible}    
+                                        onOk={hideRateModal}   
+                                        onCancel={hideRateModal}                                                        
+                                    >
+                                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                            <Rate count={10} tooltips={scoreValues} onChange={rate} />                                                                                        
+                                        </div>
+                                        <div style={{ textAlign: 'center' }}>
+                                            Таны үнэлгээ: {score}
+                                        </div>
+                                    </Modal> 
                                 </div>                                                                                                                                                
                                 <p>
                                     <StarFilled style={{ fontSize: '24px', color: '#AAF50A' }} />     
