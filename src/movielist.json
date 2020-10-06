@@ -8,7 +8,43 @@
         "language": "Монгол",
         "image": "https://cdn.looktv.mn/image/web/library/8a01918b6fa1ae9501706194f8567155/20200221032813.jpg",
         "score": 6.5,
-        "genres": [3, 5]
+        "genres": [3, 5],
+        "crew": [
+            {
+                "role": "Найруулагч",
+                "artistid": 2
+            },
+            {
+                "role": "Кино зохиолч",
+                "artistid": 1
+            }
+        ],
+        "cast": [
+            {
+                "role": "Дондог",
+                "artistid": 3
+            },
+            {
+                "role": "Янжмаа",
+                "artistid": 4
+            },
+            {
+                "role": "Ханд",
+                "artistid": 5
+            },
+            {
+                "role": "Гончиг",
+                "artistid": 6
+            },
+            {
+                "role": "Цог",
+                "artistid": 7
+            },
+            {
+                "role": "Бат",
+                "artistid": 8
+            }
+        ]
     },
     {
         "id": 2,
@@ -19,7 +55,19 @@
         "language": "Монгол",
         "image": "https://cdn.looktv.mn/image/web/library/8a01918b6fa1ae9501706194eb537147/20200221034239.jpg",
         "score": 7,
-        "genres": [6, 8]
+        "genres": [6, 8],
+        "crew": [
+            {
+                "role": "Найруулагч",
+                "artistid": 12
+            }
+        ],
+        "cast": [
+            {
+                "role": "Ариунаа",
+                "artistid": 13
+            }
+        ]
     },
     {
         "id": 3,

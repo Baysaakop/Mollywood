@@ -6,12 +6,16 @@ import { List, Avatar, message } from 'antd';
 
 import movielist from '../movielist.json';
 import genrelist from '../genrelist.json';
+import artistlist from '../artistlist.json';
+import occupationlist from '../occupationlist.json';
 
 const ContentDetail = (props) => {    
 
     const api_key = process.env.REACT_APP_API;
     const [content, setContent] = useState({});
     const [genres, setGenres] = useState([]);
+    const [crew, setCrew] = useState([]);
+    const [cast, setCast] = useState([]);
     const [buttonLike, setButtonLike] = useState('action');
     const [buttonCheck, setButtonCheck] = useState('action');
     const [buttonWatchlist, setButtonWatchlist] = useState('action');
@@ -45,7 +49,14 @@ const ContentDetail = (props) => {
         let moviegenres = movie.genres.map((item) => 
             genrelist.find((g) => parseInt(g.id) === parseInt(item))
         );
-        console.log(moviegenres);
+        let moviecrew = movie.crew.map((item) => 
+            artistlist.find((a) => parseInt(a.id) === parseInt(item.artistid))
+        );
+        let moviecast = movie.cast.map((item) => 
+            artistlist.find((a) => parseInt(a.id) === parseInt(item.artistid))
+        );
+        setCrew(moviecrew)
+        setCast(moviecast);
         setGenres(moviegenres);
         setContent(movie);             
     }, []);    
@@ -92,21 +103,6 @@ const ContentDetail = (props) => {
         setScore(value);
     }
 
-    const actorsdata = [
-        {
-            title: 'Christian Bale',
-        },
-        {
-            title: 'Anne Hatheway',
-        },
-        {
-            title: 'Andrew Garfield',
-        },
-        {
-            title: 'Emma Stone',
-        },        
-    ];
-
     return (
         <div>
             <Breadcrumb style={{ padding: '16px' }}>
@@ -129,7 +125,7 @@ const ContentDetail = (props) => {
                                 <img className="poster" src={content.image} alt="movie-cover" />
                                 <div style={{ padding: '16px', border: '1px solid #f0f2f5' }}>
                                     <Button block type="primary" icon={<PlayCircleOutlined />} style={{ marginBottom: '8px' }}>Трейлер үзэх</Button>                                      
-                                    <Button block danger type="primary" icon={<CreditCardOutlined />}>Тасалбар захиалах</Button>  
+                                    {/* <Button block danger type="primary" icon={<CreditCardOutlined />}>Тасалбар захиалах</Button>   */}
                                 </div>                                
                             </Col>
                             <Col span={24} md={16}>
@@ -191,42 +187,43 @@ const ContentDetail = (props) => {
                                 </p> */}
                                 <Tabs defaultActiveKey="1">
                                     <Tabs.TabPane tab="Мэдээлэл" key="1">
-                                        <h3>Танилцуулга</h3>                                        
-                                        <h3>Агуулга</h3>
+                                        <h3>Танилцуулга</h3>                                                                                
                                         <p>{content.description}</p>
                                     </Tabs.TabPane>
                                     <Tabs.TabPane tab="Бүрэлдэхүүн" key="2">
                                         <h3>Бүрэлдэхүүн</h3>
                                         <List
                                             itemLayout="horizontal"
-                                            dataSource={actorsdata}
+                                            dataSource={crew}
                                             renderItem={item => (
                                                 <List.Item>
                                                     <List.Item.Meta
-                                                        avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                                                        title={<a href="https://ant.design">{item.title}</a>}                                                    
+                                                        avatar={<Avatar src={item.image} />}
+                                                        title={<a href={`/artists/${item.id}`}>{item.name}</a>} 
+                                                        description={content.crew.find((c) => parseInt(c.artistid) === parseInt(item.id)).role}                                                   
                                                     />
                                                 </List.Item>
                                             )}
                                         />
                                     </Tabs.TabPane>
                                     <Tabs.TabPane tab="Жүжигчид" key="3">
-                                        <h3>Гол дүрд</h3>
+                                        <h3>Дүрүүдэд</h3>
                                         <List
                                             itemLayout="horizontal"
-                                            dataSource={actorsdata}
+                                            dataSource={cast}
                                             renderItem={item => (
                                                 <List.Item>
                                                     <List.Item.Meta
-                                                        avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                                                        title={<a href="https://ant.design">{item.title}</a>}                                                    
+                                                        avatar={<Avatar src={item.image} />}
+                                                        title={<a href={`/artists/${item.id}`}>{item.name}</a>}        
+                                                        description={content.cast.find((c) => parseInt(c.artistid) === parseInt(item.id)).role}                                                                                                
                                                     />
                                                 </List.Item>
                                             )}
                                         />
                                     </Tabs.TabPane>
                                     <Tabs.TabPane tab="Сэтгэгдэл" key="4">
-                                        Review
+                                        Сэтгэгдэл
                                     </Tabs.TabPane>
                                     <Tabs.TabPane tab="Зураг" key="5">
                                         Зураг
