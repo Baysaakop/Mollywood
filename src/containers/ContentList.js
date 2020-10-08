@@ -107,7 +107,7 @@ const ContentList = (props) => {
                             onChange: page => {
                                 console.log(page)
                             },
-                            pageSize: 12,
+                            pageSize: 30,
                         }}
                         renderItem={item => (
                             <List.Item>
@@ -115,7 +115,7 @@ const ContentList = (props) => {
                                     id={item.id}                            
                                     type={type}        
                                     name={item.title} 
-                                    image={item.image}  
+                                    image={item.image}   
                                     rating={item.score}
                                     date={getYearFromDate(item.release_date)}
                                 />                         

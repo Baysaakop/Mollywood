@@ -1,6 +1,193 @@
 [
     {
         "id": 1,
+        "title": "Монгол хүү",
+        "release_date": "1936-07-17",
+        "runningtime": 100,
+        "description": "Монгол ардын үлгэрийн сэдвээр зохиомжилсон “Аршийн мод” зохиолоор бүтээсэн энэхүү кинонд Цэвээ хэмээх хөдөөгийн нэгэн цайлган сэтгэлт, итгэмтгий малчин эр өөрийн дурлалт бүсгүй Дулмаатай гэрлэн, аз жаргалтай амьдрахын тулд шидэт модны эрэлд харь газар аялан явж, зовлонд учран, эцэст нь төрлөх монгол нутагаа иргэн ирж, жинхэнэ аз жаргалыг амсан мэдэрч буйг харуулжээ. Киноны нээлт 1936 оны 07-р сарын  17-ны өдөр Ардын хувьсгалын 15-н жилийн ойн өдрүүдэд Ард кино театрт болсон юм. Энэ кино нь ЗХУ-ын киноны уран бүтээлчдийн бүтээл бөгөөд Монголын жүжигчдийг уран сайхны кинонд анх тоглуулж, Монгол орны амьдралыг дэлгэцнээ харуулснаараа онцлоготой.",
+        "language": "Монгол",
+        "image": "http://mongol-kino.mn/wp-content/uploads/2015/01/IMG_0224-1024x682.jpg",
+        "score": 0,
+        "genres": [2, 5]
+    },
+    {
+        "id": 2,
+        "title": "Норжмаагийн зам",
+        "release_date": "1938-01-01",
+        "runningtime": 60,
+        "description": "Энэ кино нь монголын киноны уран бүтээлчдийн өөрсдөө бие даан бүтээсэн анхны уран сайхны дуугүй кино бөгөөд Европын боловсон эмнэлгийг сурталчлах зорилготой ухуулгын чиглэлээр амьд сонины хэлбэртэйгээр хийгджээ. Нэг хашааны 2 айлын жирэмсэн эмэгтэйчүүд төрөхөөр өвдөж эхлэхэд Цэрэндулам эмнэлэгт хүүгээ төрүүлэн баяр баясгалан болж байхад Норжмаа нь гэртээ лам залж гүрэм уншуулсаар төрөлт нь бүтэлгүйтэж эмнэлэгт үйл явдал болж буйг зэрэгцээ эвлүүлгээр үзүүлсэн нь үйл явдлын утга санааг үзэгчдэд тодруулж өгсөн юм.",
+        "language": "Монгол",
+        "image": "http://mongol-kino.mn/wp-content/uploads/2015/01/IMG_0150-1024x682.jpg",
+        "score": 0,
+        "genres": [5]
+    },
+    {
+        "id": 3,
+        "title": "Сүрэг чоно",
+        "release_date": "1939-01-01",
+        "runningtime": 60,
+        "description": "1940-өөд оны үед Япон тагнуулын даалгавраар бүлэг этгээдүүд хувьсгалын эсэргүүг хорлон сүйтгэх үйл ажиллагаа явуулж байжээ. Энэхүү ээдрээт үед хувьсгалын эсэргүү нарын хорт бодлого, нөгөө талаас ард түмний сонор сэрэмж аюулаас хамгаалах байгууллагын үүрэг хариуцлага өндөр байсныг залуу бүсгүй Дарьдулам түүний нөхөр Данзан нарын дүрээр нэгэн гэр бүлийн амьдралд тохиолдсон үйл явдлаар киноны утга санааг сонирхолтой илэрхийлж чадсан бөгөөд драмын жүжгийг дэлгэцнээ амьдруулсан анхны оролдлого юм. Зохиолыг Д.Намдаг өөрийн нэгэн нэрт жүжгийн санаанд тулгуурлан бичжээ.",
+        "language": "Монгол",
+        "image": "http://mongol-kino.mn/wp-content/uploads/2015/01/%D1%81%D2%AF%D1%80%D1%8D%D0%B3-%D1%87%D0%BE%D0%BD%D0%BE.23.png",
+        "score": 0,
+        "genres": [5]
+    },
+    {
+        "id": 4,
+        "title": "Анхдугаар хичээл",
+        "release_date": "1940-01-01",
+        "runningtime": 60,
+        "description": "Тухайн цаг үед шаардлагатай байсан цэрэг эх оронч сэдвээр бүтээгдсэн энэхүү кино нь хилийн манаанд үүргээ амжилттай гүйцэтгэсэн улсын баатар Гонгорын түүхэн үйл явдалд тулгуурлан өгүүлэмжээ гаргажээ. Голд дүрд Гонгор баатрыг өөрийг нь тоглуулсан нь баримтад киноны хэлбэртэй болж үзэгчдэд үнэмшилтэй хүрэхэд нөлөөлсөн талтай. Ш.Гонгор хил зөрчсөн дайснуудтай ганцаараа тулалдан ялж байгаа нь монгол ардын туульсын баатрын уламжлалт шинжийг хадгалсан аястай юм.",
+        "language": "Монгол",
+        "image": "http://mongol-kino.mn/wp-content/uploads/2015/01/IMG_0313-1024x682.jpg",
+        "score": 0,
+        "genres": [5]
+    },
+    {
+        "id": 5,
+        "title": "Тарваган тахал",
+        "release_date": "1940-01-01",
+        "runningtime": 60,
+        "description": "Гоц халдварт өвчин тарваган тахлын гай гамшиг түүнээс хэрхэн сэрэмжлэхийг олон түмэнд таниулан ойлгуулах зорилготой бүтээгдсэн баримтат уран сайхны кино юм.",
+        "language": "Монгол",
+        "image": "http://mongol-kino.mn/wp-content/uploads/2015/01/%D1%82%D0%B0%D1%80%D0%B2%D0%B0%D0%B3%D0%B0.jpg",
+        "score": 0,
+        "genres": [5]
+    },
+    {
+        "id": 6,
+        "title": "Амьдралын дайсан",
+        "release_date": "1941-01-01",
+        "runningtime": 60,
+        "description": "Нийгмийн халдварт өвчний хор холбогдол, түүнээс урьдчилан сэргийлэх арга замыг суртачилсан ухуулгын баримтат уран сайхны кино юм.",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },
+    {
+        "id": 7,
+        "title": "Аймшиггүй эх оронч",
+        "release_date": "1942-01-01",
+        "runningtime": 60,
+        "description": "Японоос тагнан турших, хорлон сүйтгэх ажиллагаа явуулах хэсэг этгээдийг манай хил рүү десантаар буулган. Агаараар буусан тэд төөрч явсаар малчин өвгөнийд ирж, орон гэрииг нь онгичон бусниулж , Эд юмсыг нь дээрэмдэн, зам зааж өгөхийг тулгахад өвгөн эрс эсэргүүцэж үл зөвшөөрнө.Аргагүйдэж мухардсан тэд их хэмжээний мөнгө өгч газарчилж өгөхийг тулгана. Өвгөн мөнгийг аваад ач хүү Сэнгээгээ отрядын төв орж энэ хэрэг явдлыг яаралтай мэдэгдэхийг захиад өөрөө тэднийг дагуулун өөрийн цэргүүдийн ирэх замыг тосон явна. Дайсан явахдаа Сэнгээг гэрт хорисон боловч хүү самбаачлан гэрийн тооноор гарч отрядын штабт мэдээ хүргэж амжсанаар өвгөн Шагдар аврагдаж байгаагаар уг киноны үйл явдал төгсөнө.",
+        "language": "Монгол",
+        "image": "http://mongol-kino.mn/wp-content/uploads/2015/01/%D0%B0%D0%B9%D0%BC%D1%88%D0%B8%D0%B3%D0%B3%D2%AF%D0%B9-%D1%8D%D1%85-%D0%BE%D1%80%D0%BE%D0%BD%D1%87.png",
+        "score": 0,
+        "genres": [5]
+    },
+    {
+        "id": 8,
+        "title": "Морин цэрэг танкист",
+        "release_date": "1942-01-01",
+        "runningtime": 60,
+        "description": "Иргэн бүр эх орныхоо тусгаар тогтнолын төлөө харийн дайсантай тэмцэх ёстой гэдгийг танкчин Жаргал, морин цэрэг Цэнд нарын үйл явдалаар харуулж, тэр хоёрын сэтгэлтэй бүсгүйчүүддээ явуулсан захидлыг замаас нь авч хорон санаа өвөрлөн тэдний хооронд хор хутган үймүүлж буй Цэрэн гэдэг этгээдээр дайсны хорт явуулгыг илэрхийлжээ.",
+        "language": "Монгол",
+        "image": "http://mongol-kino.mn/wp-content/uploads/2015/01/%D0%BC%D0%BE%D0%B8%D0%BD-%D1%86%D1%8D%D1%80%D1%8D%D0%B3-%D1%82%D0%B0%D0%BD%D0%BA%D0%B8%D1%81%D1%82.png",
+        "score": 0,
+        "genres": [5]
+    },
+    {
+        "id": 9,
+        "title": "Сүхбаатар",
+        "release_date": "1942-01-01",
+        "runningtime": 60,
+        "description": "Энэ кино нь анх удаа Ардын Хувьсгалын удирдагч жанжин Сүхбаатарын дүрийг уран сайхны кинонд тодруулан гаргаснаараа манай үзэгчдийн сэтгэлд мөнхрөн үлдсэн бөгөөд Монгол кино урлагт түүх хувьсгалын сэдэвтэй том бүтээл гарахад түлхэц өгч манай киноны залуу уран бүтээлчдийн ур чадвар сэтгэхүйд мэдрэгдэхүйц нөлөө үзүүлсэн бүтээл юм.",
+        "language": "Монгол",
+        "image": "http://mongol-kino.mn/wp-content/uploads/2015/01/IMG_03602-1024x682.jpg",
+        "score": 0,
+        "genres": [5]
+    },
+    {
+        "id": 10,
+        "title": "Хил дээр гарсан хэрэг",
+        "release_date": "1942-01-01",
+        "runningtime": 60,
+        "description": "Хил зөрчсөн дайсныг хилчин дайчид энгийн ард олны сонор сэрэмжийн ачаар баривчилж буйг үзүүлжээ.Хилчин Болд түүний сэтгэлт бүсгүй Цэнгэл нарын үйл явдлаар киноны өгүүлэмж илэрхийлэгдэнэ.",
+        "language": "Монгол",
+        "image": "http://mongol-kino.mn/wp-content/uploads/2015/01/%D1%85%D0%B8%D0%BB-%D0%B4%D1%8D%D1%8D%D1%80-%D0%B3%D0%B0%D1%81%D0%B0%D0%BD-%D1%85%D1%8D%D1%80%D1%8D%D0%B3.png",
+        "score": 0,
+        "genres": [5]
+    },
+    {
+        "id": 11,
+        "title": "Цогт тайж",
+        "release_date": "1945-01-01",
+        "runningtime": 60,
+        "description": "20-р зууны Монголын Кино Урлагийн “Манлай” бүтээлээр шалгарсан.  “Цогт тайж” хэмээх хоёр ангит уран сайхны түүхэн кинонд 17-р зууны үед амьдрач байсан эх оронч соён гэгээрүүлэгч Цогт хун тайжын намтарт түшиглэн Манжын түрэмгий бодлогийн эсрэг тэмцэн боссон Монголчуудын тусгаар тогтнолын хөдөлгөөнийг уран сайхны аргаар чадварлаг боловсруулан тусгасан юм.",
+        "language": "Монгол",
+        "image": "http://mongol-kino.mn/wp-content/uploads/2015/01/IMG_0122-1024x682.jpg",
+        "score": 0,
+        "genres": [5]
+    },
+    {
+        "id": 12,
+        "title": "Шинэ жил",
+        "release_date": "1954-01-01",
+        "runningtime": 60,
+        "description": "Тэргүүний ажилчин залуу төлөвлөгөөгөө хугацаанаасаа өмнө биелүүлж, шинэ жилээ найз нөхөдийнхөө хамт урьдчилан тэмдэглэх болсон тухайгаа ээждээ хэлэхэд залуугийн  ээж хөрш айлын авгай хоёр хурим хийх гэж байна гэж андуурч байгааг инээдмийн хэлбэрээр өгүүлж, мэргэжил дээрээ өсөн яваа тэргүүний ажилчин залуучуудын харилцаа, үерхэл нөхөрлөл, тэдний амжилт бүтээлийг тусган харуулжээ.",
+        "language": "Монгол",
+        "image": "http://mongol-kino.mn/wp-content/uploads/2015/01/%D1%88%D0%B8%D0%BD%D1%8D-%D0%B6%D0%B8%D0%BB.png",
+        "score": 0,
+        "genres": [5]
+    },
+    {
+        "id": 13,
+        "title": "Бидэнд юу саад болж байна",
+        "release_date": "1956-01-01",
+        "runningtime": 60,
+        "description": "Энэхүү кино нь 1950-иад оны дунд үед нийгмийн амьдралын урагшлах хөгжилд тээр болж байсан хуучин нийгмийн дадал заншил, хөшүүн хойрог байдал , хүнд сурталын хор уршигийг нэгдлийн нярав далантай өвгөний хадлангын машины сэлбэг хөөцөлдөхөөр хотод орж ирсэн үйл явдалтай холбон инээдмийн өнгө аясаар шүүмжлэн харуулжээ.",
+        "language": "Монгол",
+        "image": "http://mongol-kino.mn/wp-content/uploads/2015/01/IMG_0111-1024x682.jpg",
+        "score": 0,
+        "genres": [5]
+    },
+    {
+        "id": 14,
+        "title": "Гэм нь урдаа",
+        "release_date": "1956-01-01",
+        "runningtime": 60,
+        "description": "Энэ кинонд хадлан бордоо бэлтгэх чухал ажлын үеэр айраг, архи ууж хувийн зугаа цэнгэл хөөцөлдөж явсан малчин Сандагийн хамаг мал нь хахир өвлийн хүйтэнд өвс тэжээлээр дутагдан өл алдаж үхэхэд хүрснээс болж, тэрбээр уут хормойгоор өвс гуйх, айлын өвс хулгайлах зэрэг ичгүүрт байдалд орж байгааг хөнгөн инээдмийн аясаар харуулж, тухайн үеийн хөдөө аж ахуйн салбарын чухал асуудлын нэг болох мал маллагааны арга барилын тухай өгүүлжээ.",
+        "language": "Монгол",
+        "image": "http://mongol-kino.mn/wp-content/uploads/2015/01/IMG_03071-1024x682.jpg",
+        "score": 0,
+        "genres": [5]
+    },
+    {
+        "id": 15,
+        "title": "Манай аялгуу",
+        "release_date": "1942-01-01",
+        "runningtime": 60,
+        "description": "Энэ кино нь Монгол үндэсний ардын дууны баялаг уламжлал, үгийн  гүнзгий утга санаа, Монгол орны үзэсгэлэнт сайхан байгаль, ард түмний сайн сайхан амьдрал, залуусын цог золбоо хөдөлмөрч зан чанар эелдаг нөхөрсөг үэнэн ч харьцааг харуулжээ. Тээврийн жолооч Бадрал түүний хайртай бүсгүй Чимгээ нарын амьдралд тохиолдож буй сэтгэл санааны зөрчил, ойлголцлыг хөгжмийн киноны хэлээр илэрхийлэн үзүүлсэн анхны инээдмийн аястай дуулалт кино.",
+        "language": "Монгол",
+        "image": "http://mongol-kino.mn/wp-content/uploads/2015/01/%D0%BC%D0%B0%D0%BD%D0%B0%D0%B9-%D0%B0%D1%8F%D0%BB%D0%B3%D1%83%D1%83.png",
+        "score": 0,
+        "genres": [5]
+    },
+    {
+        "id": 16,
+        "title": "Сэрэлт",
+        "release_date": "1957-01-01",
+        "runningtime": 60,
+        "description": "1928 оны үед Монголд шинжлэх ухааны эмнэлэг нэвтэрч эхэлэхэд хөдөө орон нутагт ирсэн орос эмч эмэгтэй, нутгийн нэр хүндтэй маарамба нарын өрсөлдөөнөөр хуучны дадал заншил, үзэл бодол, шашны нөлөөг даван туулж хүмүүсийн үзэл бодолд эргэлт гарч, сэтгэхүйд шинэ ёс суртахуун хэрхэн төлөвшснийг үзүүлжээ.",
+        "language": "Монгол",
+        "image": "http://mongol-kino.mn/wp-content/uploads/2015/01/IMG_03831-1024x682.jpg",
+        "score": 0,
+        "genres": [5]
+    },
+    {
+        "id": 17,
+        "title": "Гурван найз",
+        "release_date": "1958-01-01",
+        "runningtime": 60,
+        "description": "Хотын нэгэн сургуульд суралцдаг Наранхүү, Сарантуяа нар зуныхаа амаралтаар хөдөө гарч малчин хүү Балбартай танилцана тэд нутгийн өвгөн Дандараас туулж өнгөрөөсөн бага насных нь түүхээс яриулж, Эрдэнэ хайрханы эрдэнэсийг олж нээх хүсэлд хөтлөгдөн агуйг зорино. Гэтэл тэнд үүрлэж байсан бүлэг хулгайч нартай санамсаргүй дайралдаж Эрдэнэ хайрханы савдагын нууцыг илэрүүлнэ.",
+        "language": "Монгол",
+        "image": "http://mongol-kino.mn/wp-content/uploads/2015/01/%D0%B3%D1%83%D1%80%D0%B2%D0%B0%D0%BD-%D0%BD%D0%B0%D0%B9%D0%B7.png",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 18,
         "title": "Морьтой ч болоосой",
         "release_date": "1959-01-01",
         "runningtime": 55,
@@ -11,7 +198,7 @@
         "genres": [3, 5]
     },
     {
-        "id": 2,
+        "id": 19,
         "title": "Ардын элч",
         "release_date": "1959-01-01",
         "runningtime": 79,
@@ -22,7 +209,29 @@
         "genres": [6, 8]
     },
     {
-        "id": 3,
+        "id": 20,
+        "title": "Элбэг дээл",
+        "release_date": "1960-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },
+    {
+        "id": 21,
+        "title": "Салхины амт",
+        "release_date": "1960-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },
+    {
+        "id": 22,
         "title": "Алтан өргөө",
         "release_date": "1961-01-01",
         "runningtime": 75,
@@ -33,7 +242,975 @@
         "genres": [2, 6, 7]
     },
     {
-        "id": 4,
+        "id": 23,
+        "title": "Гологдсон хүүхэн",
+        "release_date": "1961-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },
+    {
+        "id": 24,
+        "title": "Үүрээр",
+        "release_date": "1961-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },
+    {
+        "id": 25,
+        "title": "Баясгалан",
+        "release_date": "1962-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },
+    {
+        "id": 26,
+        "title": "Бохир гарын нууц",
+        "release_date": "1962-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },
+    {
+        "id": 27,
+        "title": "Түмний нэг",
+        "release_date": "1962-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },
+    {
+        "id": 28,
+        "title": "Аман хуур",
+        "release_date": "1963-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },
+    {
+        "id": 29,
+        "title": "Толбот хивс",
+        "release_date": "1963-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },
+    {
+        "id": 30,
+        "title": "Хоёр найз",
+        "release_date": "1963-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },
+    {
+        "id": 31,
+        "title": "Тус биш ус",
+        "release_date": "1964-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 32,
+        "title": "Ховдгийн гай",
+        "release_date": "1964-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 33,
+        "title": "Гэмшил зэмлэл",
+        "release_date": "1965-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 34,
+        "title": "Сэтгэлийн дуудлагаар",
+        "release_date": "1965-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 35,
+        "title": "Ус",
+        "release_date": "1965-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 36,
+        "title": "Хүний мөр",
+        "release_date": "1965-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 37,
+        "title": "Нөмрөг хадны цуурай",
+        "release_date": "1966-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 38,
+        "title": "Төөрсөөр төрөлдөө",
+        "release_date": "1966-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 39,
+        "title": "Цэргийн хүү",
+        "release_date": "1966-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 40,
+        "title": "Төгсгөл",
+        "release_date": "1967-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 41,
+        "title": "Хил дээр",
+        "release_date": "1967-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 42,
+        "title": "Нийслэл хүү",
+        "release_date": "1968-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 43,
+        "title": "Өглөө",
+        "release_date": "1968-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 44,
+        "title": "Өндөр ээж",
+        "release_date": "1968-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 45,
+        "title": "Агуйн нууц",
+        "release_date": "1969-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 46,
+        "title": "Анхны алхам",
+        "release_date": "1969-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 47,
+        "title": "Талын цуурай",
+        "release_date": "1970-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 48,
+        "title": "Дайсны цэргүүдээ сонсоцгоо",
+        "release_date": "1971-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 49,
+        "title": "Тэмцэл",
+        "release_date": "1971-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 50,
+        "title": "Улаан дарцаг",
+        "release_date": "1971-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 51,
+        "title": "Ичээнд нь",
+        "release_date": "1972-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 52,
+        "title": "Тулалдааны өмнө",
+        "release_date": "1972-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 53,
+        "title": "Эхлэлт",
+        "release_date": "1972-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 54,
+        "title": "Баянбулагийнхан",
+        "release_date": "1973-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 55,
+        "title": "Моторын дуу",
+        "release_date": "1973-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 56,
+        "title": "Туяагийн бичээгүй захидал",
+        "release_date": "1973-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 57,
+        "title": "Уулзалт",
+        "release_date": "1973-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 58,
+        "title": "Чимгээгийн төрсөн өдөр",
+        "release_date": "1973-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 59,
+        "title": "Говийн нүдэн",
+        "release_date": "1974-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 60,
+        "title": "Нар хиртсэн жил",
+        "release_date": "1974-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 61,
+        "title": "Нэг ангийн хоёр",
+        "release_date": "1974-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 62,
+        "title": "Тамирын охин",
+        "release_date": "1974-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 63,
+        "title": "Хөдөөгийн баясгалан",
+        "release_date": "1974-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 64,
+        "title": "Алтан соёмбын дуулал",
+        "release_date": "1975-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 65,
+        "title": "Анхны хайрын дууль",
+        "release_date": "1975-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 66,
+        "title": "Сүхболдын яриа",
+        "release_date": "1975-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 67,
+        "title": "Хань",
+        "release_date": "1975-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },  
+    {
+        "id": 68,
+        "title": "Эх бүрдийн домог",
+        "release_date": "1975-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },  
+    {
+        "id": 69,
+        "title": "Өндөг",
+        "release_date": "1975-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },  
+    {
+        "id": 70,
+        "title": "Хонины найр",
+        "release_date": "1976-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },  
+    {
+        "id": 71,
+        "title": "Хүний амь",
+        "release_date": "1976-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },  
+    {
+        "id": 72,
+        "title": "Хүний төлөө",
+        "release_date": "1976-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },  
+    {
+        "id": 73,
+        "title": "Шинэ хотын гэрэл",
+        "release_date": "1976-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },  
+    {
+        "id": 74,
+        "title": "Давааны цаана даваа",
+        "release_date": "1977-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 75,
+        "title": "Дэгдээхий нас",
+        "release_date": "1977-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 76,
+        "title": "Зуслангийн найзууд",
+        "release_date": "1977-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 77,
+        "title": "Хөх ногооны униар",
+        "release_date": "1977-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 78,
+        "title": "Газрын жигүүр",
+        "release_date": "1978-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 79,
+        "title": "Их замын эхэнд",
+        "release_date": "1978-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 80,
+        "title": "Солонгын таван өнгө",
+        "release_date": "1978-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    }, 
+    {
+        "id": 81,
+        "title": "Тэнгэрийн муухай арилдаг",
+        "release_date": "1978-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    }, 
+    {
+        "id": 82,
+        "title": "Хайрхан өндөр хаана байна",
+        "release_date": "1978-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    }, 
+    {
+        "id": 83,
+        "title": "Бушхүүгийн үлгэр",
+        "release_date": "1979-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 84,
+        "title": "Газрын үнэр",
+        "release_date": "1979-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 85,
+        "title": "Тойрох хуудас",
+        "release_date": "1979-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 86,
+        "title": "Тууврын замд",
+        "release_date": "1979-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 87,
+        "title": "Халгай 1,2,3,4,5",
+        "release_date": "1979-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 88,
+        "title": "Хоньчин найдан",
+        "release_date": "1979-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 89,
+        "title": "Үүрийн цолмон",
+        "release_date": "1979-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },
+    {
+        "id": 90,
+        "title": "Говийн зэрэглээ",
+        "release_date": "1980-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 91,
+        "title": "Гул аранжин",
+        "release_date": "1980-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 92,
+        "title": "Итгэл гомдол",
+        "release_date": "1980-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 93,
+        "title": "Хүний сайхан сэтгэл",
+        "release_date": "1980-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 94,
+        "title": "Шийдвэрлэх алхам",
+        "release_date": "1980-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 95,
+        "title": "Эргэж бодох бодол",
+        "release_date": "1980-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 96,
+        "title": "Эхлэл",
+        "release_date": "1980-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 97,
+        "title": "Өнөр бүл",
+        "release_date": "1980-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 98,
+        "title": "Говь хянганд тулалдсан нь",
+        "release_date": "1981-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 99,
+        "title": "Хатанбаатар",
+        "release_date": "1981-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 100,
+        "title": "Цэрэг эрсийн жирийн өдрүүд",
+        "release_date": "1981-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 101,
+        "title": "Жаргал даахгүйн зовлон",
+        "release_date": "1982-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    }, 
+    {
+        "id": 102,
+        "title": "Тэмцлийн оч",
+        "release_date": "1982-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    }, 
+    {
+        "id": 103,
+        "title": "Хуучин сүм",
+        "release_date": "1982-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 104,
+        "title": "Багын найз",
+        "release_date": "1983-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    }, 
+    {
+        "id": 105,
+        "title": "Газарчин",
+        "release_date": "1983-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    }, 
+    {
+        "id": 106,
+        "title": "Гарын таван хуруу",
+        "release_date": "1983-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    }, 
+    {
+        "id": 107,
+        "title": "Гийнгоо",
+        "release_date": "1983-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    }, 
+    {
+        "id": 108,
+        "title": "Ингэх гээд байсан юм",
+        "release_date": "1983-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    }, 
+    {
+        "id": 109,
+        "title": "Сахиус уу, сахиул уу",
+        "release_date": "1983-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    }, 
+    {
+        "id": 110,
+        "title": "Үүр цайхын өмнө",
+        "release_date": "1983-01-01",
+        "runningtime": 60,
+        "description": "",
+        "language": "Монгол",
+        "image": "",
+        "score": 0,
+        "genres": [5]
+    },    
+    {
+        "id": 111,
         "title": "Улаанбаатарт байгаа миний аавд",
         "release_date": "1961-01-01",
         "runningtime": 88,
@@ -44,7 +1221,7 @@
         "genres": [2, 5, 6]
     },
     {
-        "id": 5,
+        "id": 112,
         "title": "Хөхөө гэрлэх дөхлөө",
         "release_date": "1962-01-01",
         "runningtime": 76,
@@ -55,7 +1232,7 @@
         "genres": [5, 12]
     },
     {
-        "id": 6,
+        "id": 113,
         "title": "Энэ хүүхнүүд үү",
         "release_date": "1963-01-01",
         "runningtime": 68,
@@ -66,7 +1243,7 @@
         "genres": [3, 12]
     },
     {
-        "id": 7,
+        "id": 114,
         "title": "Нүгэл буян",
         "release_date": "1963-01-01",
         "runningtime": 69,
@@ -77,7 +1254,7 @@
         "genres": [5]
     },
     {
-        "id": 8,
+        "id": 115,
         "title": "Зэрэг нэмэхийн өмнө",
         "release_date": "1965-01-01",
         "runningtime": 66,
@@ -88,7 +1265,7 @@
         "genres": [3, 8]
     },
     {
-        "id": 9,
+        "id": 116,
         "title": "Үер",
         "release_date": "1966-01-01",
         "runningtime": 69,
@@ -99,7 +1276,7 @@
         "genres": [5, 15]
     },
     {
-        "id": 10,
+        "id": 117,
         "title": "Хүргэн хүү.",
         "release_date": "1970-01-01",
         "runningtime": 99,
@@ -110,7 +1287,7 @@
         "genres": [5]
     },
     {
-        "id": 11,
+        "id": 118,
         "title": "Тунгалаг тамир 1",
         "release_date": "1970-01-01",
         "runningtime": 96,
@@ -121,7 +1298,7 @@
         "genres": [2, 5, 8, 15]
     },
     {
-        "id": 12,
+        "id": 119,
         "title": "Тунгалаг тамир 2",
         "release_date": "1972-01-01",
         "runningtime": 80,
@@ -132,7 +1309,7 @@
         "genres": [2, 5, 8, 15]
     },
     {
-        "id": 13,
+        "id": 120,
         "title": "Тунгалаг тамир 3",
         "release_date": "1973-01-01",
         "runningtime": 91,
@@ -143,7 +1320,7 @@
         "genres": [2, 5, 8, 15]
     },
     {
-        "id": 14,
+        "id": 121,
         "title": "Мартагдашгүй намар",
         "release_date": "1975-01-01",
         "runningtime": 84,
@@ -154,7 +1331,7 @@
         "genres": [5, 12]
     },
     {
-        "id": 15,
+        "id": 122,
         "title": "Гэрлэж амжаагүй явна",
         "release_date": "1981-01-01",
         "runningtime": 95,
@@ -165,7 +1342,7 @@
         "genres": [5, 12]
     },
     {
-        "id": 16,
+        "id": 123,
         "title": "Гарьд магнай",
         "release_date": "1983-01-01",
         "runningtime": 98,
@@ -176,7 +1353,7 @@
         "genres": [5, 12, 17]
     },
     {
-        "id": 17,
+        "id": 124,
         "title": "Ирж яваа цаг",
         "release_date": "1986-01-01",
         "runningtime": 84,
@@ -187,7 +1364,7 @@
         "genres": [5]
     },
     {
-        "id": 18,
+        "id": 125,
         "title": "Тод магнай",
         "release_date": "1990-01-01",
         "runningtime": 93,
@@ -198,7 +1375,7 @@
         "genres": [5, 17]
     },
     {
-        "id": 19,
+        "id": 126,
         "title": "Цэц магнай",
         "release_date": "1995-01-01",
         "runningtime": 85,
