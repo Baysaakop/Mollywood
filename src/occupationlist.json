@@ -1,46 +1,51 @@
 [
     {
         "id": 1,
+        "name": "Actor",
+        "name_mn": "Жүжигчин"
+    },
+    {
+        "id": 2,
         "name": "Producer",
         "name_mn": "Продюсер"
     },
     {
-        "id": 2,
+        "id": 3,
         "name": "Director",
         "name_mn": "Найруулагч"
     },
     {
-        "id": 3,
+        "id": 4,
         "name": "Screenwriter",
         "name_mn": "Кино зохиолч"
     },
     {
-        "id": 4,
+        "id": 5,
         "name": "Production Designer",
         "name_mn": "Тайзны зураач"
     },
     {
-        "id": 5,
+        "id": 6,
         "name": "Costume Designer",
         "name_mn": "Нүүр хувиргагч"
     },
     {
-        "id": 6,
+        "id": 7,
         "name": "Cinematographer",
         "name_mn": "Зураглаач"
     },
     {
-        "id": 7,
+        "id": 8,
         "name": "Editor",
         "name_mn": "Эвлүүлэгч"
     },
     {
-        "id": 8,
+        "id": 9,
         "name": "Music composer",
         "name_mn": "Хөгжмийн зохиолч"
     },
     {
-        "id": 9,
+        "id": 10,
         "name": "Sound engineer",
         "name_mn": "Дууны оператор"
     }
