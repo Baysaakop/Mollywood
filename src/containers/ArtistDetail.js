@@ -6,11 +6,13 @@ import { List, Avatar, message } from 'antd';
 
 import artistlist from '../artistlist.json';
 import occupationlist from '../occupationlist.json';
+import movielist from '../movielist.json';
 
 const ArtistDetail = (props) => {    
 
     const [artist, setArtist] = useState({});
     const [occupations, setOccupations] = useState([]);
+    const [movies, setMovies] = useState([]);
     const [buttonLike, setButtonLike] = useState('action');
     const [buttonCheck, setButtonCheck] = useState('action');
     const [buttonWatchlist, setButtonWatchlist] = useState('action');
@@ -30,11 +32,23 @@ const ArtistDetail = (props) => {
     }
 
     useEffect(() => {     
-        let artist = artistlist.find((item) => parseInt(item.id) === parseInt(props.match.params.id));     
-        console.log(artist);
+        let artist = artistlist.find((item) => parseInt(item.id) === parseInt(props.match.params.id));             
         let artistoccupations = artist.occupations.map((item) => 
             occupationlist.find((o) => parseInt(o.id) === parseInt(item))
-        );        
+        );
+        let artistmovies = [];
+        //  movielist.find((item) => item.crew.find((c) => parseInt(c.artistid) === parseInt(artist.id)));
+        movielist.map((item) => {
+            var res = item.crew.find((c) => 
+                parseInt(c.artistid) === parseInt(artist.id)
+            )
+            if (res !== undefined)
+            {
+                artistmovies.push(item);
+            }
+        });
+        console.log(artistmovies);
+        setMovies(artistmovies);
         setOccupations(artistoccupations);
         setArtist(artist);             
     }, []);    
@@ -81,21 +95,6 @@ const ArtistDetail = (props) => {
         setScore(value);
     }
 
-    const actorsdata = [
-        {
-            title: 'Christian Bale',
-        },
-        {
-            title: 'Anne Hatheway',
-        },
-        {
-            title: 'Andrew Garfield',
-        },
-        {
-            title: 'Emma Stone',
-        },        
-    ];
-
     return (
         <div>
             <Breadcrumb style={{ padding: '16px' }}>
@@ -103,7 +102,7 @@ const ArtistDetail = (props) => {
                     <a href="/">Нүүр</a>
                 </Breadcrumb.Item>
                 <Breadcrumb.Item>
-                    <a href={`/${props.link}`}>{props.keyword}</a>
+                    <a href={`/${props.type}`}>{props.keyword}</a>
                 </Breadcrumb.Item>
                 <Breadcrumb.Item>
                     {artist.name}
@@ -164,12 +163,13 @@ const ArtistDetail = (props) => {
                                         <h3>Уран бүтээлүүд</h3>
                                         <List
                                             itemLayout="horizontal"
-                                            dataSource={actorsdata}
+                                            dataSource={movies}
                                             renderItem={item => (
                                                 <List.Item>
                                                     <List.Item.Meta
                                                         avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                                                        title={<a href="https://ant.design">{item.title}</a>}                                                    
+                                                        title={<a href="https://ant.design">{item.title}</a>}    
+                                                        description={checkDate(item.release_date)}                                                
                                                     />
                                                 </List.Item>
                                             )}

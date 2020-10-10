@@ -48,5 +48,15 @@
         "id": 10,
         "name": "Sound engineer",
         "name_mn": "Дууны оператор"
+    },
+    {
+        "id": 11,
+        "name": "Operator",
+        "name_mn": "Оператор"
+    },
+    {
+        "id": 12,
+        "name": "",
+        "name_mn": "Зураач"
     }
 ]

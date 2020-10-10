@@ -110,7 +110,7 @@ const ContentDetail = (props) => {
                     <a href="/">Нүүр</a>
                 </Breadcrumb.Item>
                 <Breadcrumb.Item>
-                    <a href={`/${props.link}`}>{props.keyword}</a>
+                    <a href={`/${props.type}`}>{props.keyword}</a>
                 </Breadcrumb.Item>
                 <Breadcrumb.Item>
                     {content.title}
