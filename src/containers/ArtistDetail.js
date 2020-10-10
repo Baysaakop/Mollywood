@@ -134,25 +134,6 @@ const ArtistDetail = (props) => {
                                     <Tooltip title="Дараа үзэх">
                                         <Button className={buttonWatchlist} shape="circle" icon={<PlusOutlined />} onClick={watchlist} />
                                     </Tooltip>       
-                                    {/* <Tooltip title="Үнэлгээ өгөх">
-                                        <Button className={buttonRate} shape="circle" icon={<StarOutlined />} onClick={showRateModal} />
-                                    </Tooltip>  
-                                    <Tooltip title="Хуваалцах">
-                                        <Button className={buttonShare} shape="circle" icon={<ShareAltOutlined />} />
-                                    </Tooltip>
-                                    <Modal
-                                        title="Үнэлгээ өгөх"              
-                                        visible={rateVisible}    
-                                        onOk={hideRateModal}   
-                                        onCancel={hideRateModal}                                                        
-                                    >
-                                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                                            <Rate count={10} tooltips={scoreValues} onChange={rate} />                                                                                        
-                                        </div>
-                                        <div style={{ textAlign: 'center' }}>
-                                            Таны үнэлгээ: {score}
-                                        </div>
-                                    </Modal>  */}
                                 </div>                                                                                                                                                
                                 <Tabs defaultActiveKey="1">
                                     <Tabs.TabPane tab="Танилцуулга" key="1">
@@ -167,8 +148,8 @@ const ArtistDetail = (props) => {
                                             renderItem={item => (
                                                 <List.Item>
                                                     <List.Item.Meta
-                                                        avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                                                        title={<a href="https://ant.design">{item.title}</a>}    
+                                                        avatar={<Avatar src={item.image} />}
+                                                        title={<a href={`/movies/${item.id}`}>{item.title}</a>}    
                                                         description={checkDate(item.release_date)}                                                
                                                     />
                                                 </List.Item>

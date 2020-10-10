@@ -14,8 +14,6 @@ const ContentDetail = (props) => {
     const api_key = process.env.REACT_APP_API;
     const [content, setContent] = useState({});
     const [genres, setGenres] = useState([]);
-    const [crew, setCrew] = useState([]);
-    const [cast, setCast] = useState([]);
     const [buttonLike, setButtonLike] = useState('action');
     const [buttonCheck, setButtonCheck] = useState('action');
     const [buttonWatchlist, setButtonWatchlist] = useState('action');
@@ -49,17 +47,13 @@ const ContentDetail = (props) => {
         let moviegenres = movie.genres.map((item) => 
             genrelist.find((g) => parseInt(g.id) === parseInt(item))
         );
-        let moviecrew = movie.crew.map((item) => 
-            artistlist.find((a) => parseInt(a.id) === parseInt(item.artistid))
-        );
-        let moviecast = movie.cast.map((item) => 
-            artistlist.find((a) => parseInt(a.id) === parseInt(item.artistid))
-        );
-        setCrew(moviecrew)
-        setCast(moviecast);
         setGenres(moviegenres);
         setContent(movie);             
     }, []);    
+
+    const getArtist = (id) => {
+        return artistlist.find((a) => parseInt(a.id) === parseInt(id));
+    }
 
     const checkDate = (date) => {    
         let d = new Date(date);
@@ -194,13 +188,13 @@ const ContentDetail = (props) => {
                                         <h3>Бүрэлдэхүүн</h3>
                                         <List
                                             itemLayout="horizontal"
-                                            dataSource={crew}
+                                            dataSource={content.crew}
                                             renderItem={item => (
                                                 <List.Item>
                                                     <List.Item.Meta
-                                                        avatar={<Avatar src={item.image} />}
-                                                        title={<a href={`/artists/${item.id}`}>{item.name}</a>} 
-                                                        description={content.crew.find((c) => parseInt(c.artistid) === parseInt(item.id)).role}                                                   
+                                                        avatar={<Avatar src={getArtist(item.artistid).image} />}
+                                                        title={<a href={`/artists/${item.artistid}`}>{getArtist(item.artistid).name}</a>} 
+                                                        description={item.role}                                                   
                                                     />
                                                 </List.Item>
                                             )}
@@ -210,13 +204,13 @@ const ContentDetail = (props) => {
                                         <h3>Дүрүүдэд</h3>
                                         <List
                                             itemLayout="horizontal"
-                                            dataSource={cast}
+                                            dataSource={content.cast}
                                             renderItem={item => (
                                                 <List.Item>
                                                     <List.Item.Meta
-                                                        avatar={<Avatar src={item.image} />}
-                                                        title={<a href={`/artists/${item.id}`}>{item.name}</a>}        
-                                                        description={content.cast.find((c) => parseInt(c.artistid) === parseInt(item.id)).role}                                                                                                
+                                                        avatar={<Avatar src={getArtist(item.artistid).image} />}
+                                                        title={<a href={`/artists/${item.artistid}`}>{getArtist(item.artistid).name}</a>} 
+                                                        description={item.role}                                      
                                                     />
                                                 </List.Item>
                                             )}

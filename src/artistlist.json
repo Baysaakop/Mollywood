@@ -337,7 +337,7 @@
         "country": "Монгол",
         "birthdate": "",       
         "biography": "",        
-        "image": "https://lh3.googleusercontent.com/proxy/PBHqsBnv0YOrhhz0HDpPrzAnQzrXjtM2M9CMHRZQ12cI_Vm-IRCZS2xzEazHNK_PNqc1wJMW69ZwOUaG52D7l1lzYOlT3LfwYJYG4aCHJkzHXA_gEs2PzTRjhbAaPC6yWX8Gm_4KcA",        
+        "image": "https://i.ytimg.com/vi/YOrYagwiaRc/hqdefault.jpg",        
         "occupations": [1, 3]
     },
     {
@@ -350,5 +350,49 @@
         "biography": "",        
         "image": "https://kinosan.mn/uploads/cache/c/d/f7e113764563085f134c1d459a974af9a6431198_0x360.jpg",        
         "occupations": [1, 3]
-    }    
+    },
+    {
+        "id": 102,
+        "name": "Баатар.Б",
+        "firstname": "Баатар",
+        "lastname": "Бат-Өлзий",
+        "country": "Монгол",
+        "birthdate": "",       
+        "biography": "",        
+        "image": "https://kinosan.mn/uploads/cache/f/c/8677149725448bf1c16ef3b3b2a98e77d228ac82_0x360.jpg",        
+        "occupations": [1, 2, 3]
+    },
+    {
+        "id": 103,
+        "name": "Сэнгэдорж.Ж",
+        "firstname": "Сэнгэдорж",
+        "lastname": "Жанчивдорж",
+        "country": "Монгол",
+        "birthdate": "",       
+        "biography": "",        
+        "image": "https://kinosan.mn/uploads/cache/f/c/fb4656b4c0435bd4941b56184b74a67440233010_0x360.jpg",        
+        "occupations": [3, 4]
+    },
+    {
+        "id": 104,
+        "name": "Батболд.З",
+        "firstname": "Батболд",
+        "lastname": "Загд",
+        "country": "Монгол",
+        "birthdate": "",       
+        "biography": "",        
+        "image": "https://kinosan.mn/uploads/cache/a/e/66b0cc3a82c94543f3af771ed490ae88c4d3624c_0x360.jpg",        
+        "occupations": [3, 4]
+    },
+    {
+        "id": 105,
+        "name": "Ганзориг.Ч",
+        "firstname": "Ганзориг",
+        "lastname": "Ч",
+        "country": "Монгол",
+        "birthdate": "",       
+        "biography": "",        
+        "image": "https://kinosan.mn/uploads/cache/5/a/0da356651edfe179b6a0b6b824671f7b9286e947_0x360.jpg",        
+        "occupations": [3, 4]
+    }                
 ]

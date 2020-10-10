@@ -20,7 +20,7 @@ const BaseRouter = () => (
         <Route exact path='/blogs' component={BlogList} />
         {/* Detail View */}
         {/* <Route exact path='/movies/:movieID' component={MovieDetail} /> */}
-        <Route exact path='/movies/:id' render={(props) => (<ContentDetail {...props} type="movie" keyword="Кино" />)} />
+        <Route exact path='/movies/:id' render={(props) => (<ContentDetail {...props} type="movies" keyword="Кино" />)} />
         <Route exact path='/series/:id' render={(props) => (<ContentDetail {...props} type="series" keyword="Цуврал" />)} />
         <Route exact path='/artists/:id' render={(props) => (<ArtistDetail {...props} type="artists" keyword="Уран бүтээлч" />)} />
         {/* User Authentication */}

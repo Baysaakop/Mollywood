@@ -83,5 +83,10 @@
         "id": 17,
         "name": "Sports",
         "name_mn": "Спортын"   
-    }        
+    },
+    {
+        "id": 18,
+        "name": "Biography",
+        "name_mn": "Намтарчилсан"   
+    }          
 ]
