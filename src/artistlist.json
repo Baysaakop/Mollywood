@@ -330,6 +330,17 @@
         "occupations": [1]
     },
     {
+        "id": 99,
+        "name": "Балжинням.Б",
+        "firstname": "Балжинням",
+        "lastname": "Бэгз",
+        "country": "Монгол",
+        "birthdate": "",       
+        "biography": "",        
+        "image": "https://kinosan.mn/uploads/cache/c/d/ea0f5b46f09a3252b918882ff753569dbc2116ee_0x360.jpg",        
+        "occupations": [3, 4]
+    },
+    {
         "id": 100,
         "name": "Бат-Өлзий.О",
         "firstname": "Бат-Өлзий",
