@@ -1,11 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { Breadcrumb, Col, List, Row, Select } from 'antd';
+import './ContentList.css';
+import { Breadcrumb, Col, List, Radio, Row, Select, Tooltip, Space } from 'antd';
 import ContentCard from '../components/ContentCard';
 import ContentFilterForm from '../components/ContentFilterForm';
 import movielist from '../movielist.json';
 import serieslist from '../serieslist.json';
+import Icon, { AppstoreFilled,  CheckOutlined, LikeOutlined, MenuOutlined, PlusOutlined, StarFilled } from '@ant-design/icons';
+import ContentListItem from '../components/ContentListItem';
 
 const { Option } = Select;
+
+const IconText = ({ icon, text }) => (
+    <Space>
+        {React.createElement(icon)}
+        {text}
+    </Space>
+);
 
 const ContentList = (props) => {
 
@@ -13,7 +23,12 @@ const ContentList = (props) => {
     const [type, setType] = useState('');
     const [orderMode, setOrderMode] = useState('releasedate');
     const [allContents, setAllContents] = useState([]);    
-    const [contents, setContents] = useState([]);        
+    const [contents, setContents] = useState([]);     
+    const [viewMode, setViewMode] = useState('grid');
+
+    const handleViewMode = e => {        
+        setViewMode(e.target.value);
+    }
 
     useEffect(() => {                        
         setType(props.type); 
@@ -80,48 +95,82 @@ const ContentList = (props) => {
             </Breadcrumb>                            
             <Row style={{ padding: '16px' }}>                
                 <Col sm={12} md={18}>
-                    <div style={{ marginBottom: '16px', display: 'flex', justifyContent: 'space-between' }}>
-                        <div>
+                    <Row gutter={[16, 16]}>
+                        <Col xs={24} md={12}>
                             <h3>Нийт: {contents.length} {props.keyword}</h3>
-                        </div>
-                        <div>
-                            <Select defaultValue={orderMode} style={{ width: 250 }} onChange={selectOrderMode}>   
+                        </Col>
+                        <Col xs={24} md={12} id="modeselector">                            
+                            <Select defaultValue={orderMode} style={{ width: 200 }} onChange={selectOrderMode}>   
                                 <Option value="title">Үсгийн дараалал</Option>
                                 <Option value="rating">Үнэлгээгээр</Option>
                                 <Option value="releasedate">Нээлтийн огноо</Option>  
                             </Select>
-                        </div>
-                    </div>
-                    <List
-                        grid={{
-                            gutter: 16,
-                            xs: 2,
-                            sm: 2,
-                            md: 4,
-                            lg: 4,
-                            xl: 6,
-                            xxl: 6,
-                        }}
-                        dataSource={contents}
-                        pagination={{
-                            onChange: page => {
-                                console.log(page)
-                            },
-                            pageSize: 30,
-                        }}
-                        renderItem={item => (
-                            <List.Item>
-                                <ContentCard                                    
-                                    id={item.id}                            
-                                    type={type}        
-                                    name={item.title} 
-                                    image={item.image}   
-                                    rating={item.score}
-                                    date={getYearFromDate(item.release_date)}
-                                />                         
-                            </List.Item>
-                        )}
-                    /> 
+                            <Radio.Group value={viewMode} onChange={handleViewMode}>
+                                <Tooltip title="Grid view">
+                                    <Radio.Button value="grid"><AppstoreFilled /></Radio.Button>
+                                </Tooltip>
+                                <Tooltip title="List view">
+                                    <Radio.Button value="list"><MenuOutlined /></Radio.Button>
+                                </Tooltip>
+                            </Radio.Group>
+                        </Col>
+                    </Row>
+                    { viewMode === 'list' ? (
+                        <List                            
+                            itemLayout="vertical"
+                            dataSource={contents}                            
+                            pagination={{
+                                onChange: page => {
+                                    console.log(page)
+                                },
+                                pageSize: 10,
+                            }}
+                            renderItem={item => (                           
+                                <List.Item style={{ paddingBottom: 0 }}>
+                                    <ContentListItem 
+                                        id={item.id}                            
+                                        type={type}       
+                                        item={item} 
+                                        name={item.title} 
+                                        image={item.image}   
+                                        rating={item.score}
+                                        date={getYearFromDate(item.release_date)}
+                                    />
+                                </List.Item>                                            
+                            )}
+                        />
+                    ) : (
+                        <List
+                            grid={{
+                                gutter: 16,
+                                xs: 2,
+                                sm: 2,
+                                md: 4,
+                                lg: 4,
+                                xl: 6,
+                                xxl: 6,
+                            }}
+                            dataSource={contents}
+                            pagination={{
+                                onChange: page => {
+                                    console.log(page)
+                                },
+                                pageSize: 30,
+                            }}
+                            renderItem={item => (
+                                <List.Item>
+                                    <ContentCard                                    
+                                        id={item.id}                            
+                                        type={type}        
+                                        name={item.title} 
+                                        image={item.image}   
+                                        rating={item.score}
+                                        date={getYearFromDate(item.release_date)}
+                                    />                         
+                                </List.Item>
+                            )}
+                        /> 
+                    )}                                       
                 </Col>
                 <Col sm={24} md={6}>                    
                     <ContentFilterForm 

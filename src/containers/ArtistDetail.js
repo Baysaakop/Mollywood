@@ -148,7 +148,7 @@ const ArtistDetail = (props) => {
                                             renderItem={item => (
                                                 <List.Item>
                                                     <List.Item.Meta
-                                                        avatar={<Avatar src={item.image} />}
+                                                        avatar={<Avatar shape="square" size={64} src={item.image} />}
                                                         title={<a href={`/movies/${item.id}`}>{item.title}</a>}    
                                                         description={checkDate(item.release_date)}                                                
                                                     />

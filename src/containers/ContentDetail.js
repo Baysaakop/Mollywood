@@ -8,6 +8,7 @@ import movielist from '../movielist.json';
 import genrelist from '../genrelist.json';
 import artistlist from '../artistlist.json';
 import occupationlist from '../occupationlist.json';
+import { Link } from 'react-router-dom';
 
 const ContentDetail = (props) => {    
 
@@ -119,7 +120,7 @@ const ContentDetail = (props) => {
                                 <img className="poster" src={content.image} alt="movie-cover" />
                                 <div style={{ padding: '16px', border: '1px solid #f0f2f5' }}>
                                     <Button block type="primary" icon={<PlayCircleOutlined />} style={{ marginBottom: '8px' }}>Трейлер үзэх</Button>                                      
-                                    {/* <Button block danger type="primary" icon={<CreditCardOutlined />}>Тасалбар захиалах</Button>   */}
+                                    {/* <Link to="#"><Button block danger type="primary" icon={<CreditCardOutlined />}>Шууд үзэх</Button></Link> */}
                                 </div>                                
                             </Col>
                             <Col span={24} md={16}>

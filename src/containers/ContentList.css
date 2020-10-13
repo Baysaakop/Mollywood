@@ -1,0 +1,10 @@
+#modeselector {
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media only screen and (max-width: 600px) {
+    #modeselector {
+        justify-content: flex-start;
+    }
+}

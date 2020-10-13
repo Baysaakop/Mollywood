@@ -3,12 +3,17 @@
     margin-top: 64px;
 }
 
-@media only screen and (max-width: 600px) {
-    .site-layout {
-        padding: 16px 16px;
-    }
-}
-
 .site-layout .site-layout-background {
     background: #fff;
+    padding: 16px;
+}
+
+@media only screen and (max-width: 600px) {
+    .site-layout {
+        padding: 16px;
+    }
+
+    .site-layout .site-layout-background {
+        padding: 4px;
+    }
 }

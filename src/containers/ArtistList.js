@@ -35,7 +35,7 @@ const ArtistList = (props) => {
     }
 
     const orderByBirthdate = (data) => {
-        return data.sort((a, b) => new Date(b.birthdate).getTime() - new Date(a.birthdate).getTime());
+        return data.sort((a, b) => new Date(a.birthdate).getTime() - new Date(b.birthdate).getTime());
     }
 
     const filter = (result) => {    
