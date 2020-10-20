@@ -330,7 +330,7 @@
         "occupations": [1]
     },
     {
-        "id": 99,
+        "id": 1000,
         "name": "Балжинням.Б",
         "firstname": "Балжинням",
         "lastname": "Бэгз",
@@ -341,7 +341,7 @@
         "occupations": [3, 4, 7]
     },
     {
-        "id": 100,
+        "id": 1001,
         "name": "Бат-Өлзий.О",
         "firstname": "Бат-Өлзий",
         "lastname": "Осор",
@@ -352,7 +352,7 @@
         "occupations": [1, 3]
     },
     {
-        "id": 101,
+        "id": 1002,
         "name": "Баттулга.С",
         "firstname": "Баттулга",
         "lastname": "Сувид",
@@ -363,7 +363,7 @@
         "occupations": [1, 3]
     },
     {
-        "id": 102,
+        "id": 1003,
         "name": "Баатар.Б",
         "firstname": "Баатар",
         "lastname": "Бат-Өлзий",
@@ -374,7 +374,7 @@
         "occupations": [1, 2, 3]
     },
     {
-        "id": 103,
+        "id": 1004,
         "name": "Сэнгэдорж.Ж",
         "firstname": "Сэнгэдорж",
         "lastname": "Жанчивдорж",
@@ -385,7 +385,7 @@
         "occupations": [3, 4]
     },
     {
-        "id": 104,
+        "id": 1005,
         "name": "Батболд.З",
         "firstname": "Батболд",
         "lastname": "Загд",
@@ -396,7 +396,7 @@
         "occupations": [3, 4]
     },
     {
-        "id": 105,
+        "id": 1006,
         "name": "Ганзориг.Ч",
         "firstname": "Ганзориг",
         "lastname": "Ч",
@@ -407,7 +407,7 @@
         "occupations": [3, 4]
     },
     {
-        "id": 106,
+        "id": 1007,
         "name": "Тамир.Б",
         "firstname": "Тамир",
         "lastname": "Бат-Өлзий",
@@ -416,5 +416,60 @@
         "biography": "",        
         "image": "https://kinosan.mn/uploads/cache/3/d/1d3af40ba4db801016e89b6bce69f0535df9cb64_0x360.jpg",        
         "occupations": [1, 2, 3, 4]
-    }     
+    },
+    {
+        "id": 1008,
+        "name": "Наранбаатар.Н",
+        "firstname": "Наранбаатар",
+        "lastname": "Намнан",
+        "country": "Монгол",
+        "birthdate": "",       
+        "biography": "",        
+        "image": "https://kinosan.mn/uploads/cache/b/4/0051d8e454aabfd87a5d6df5d52aa23231c8c9f0_0x360.jpg",        
+        "occupations": [1, 3]
+    },
+    {
+        "id": 1009,
+        "name": "Эрдэнэбилэг.Г",
+        "firstname": "Эрдэнэбилэг",
+        "lastname": "Ганболд",
+        "country": "Монгол",
+        "birthdate": "1977-10-03",       
+        "biography": "",        
+        "image": "https://kinosan.mn/uploads/cache/1/e/daac256d556acbf87557aec86a01fbd6e18fa8ee_0x360.jpg",        
+        "occupations": [1, 3, 4]
+    },
+    {
+        "id": 1010,
+        "name": "Золбаяр.Д",
+        "firstname": "Золбаяр",
+        "lastname": "Дорж",
+        "country": "Монгол",
+        "birthdate": "",       
+        "biography": "",        
+        "image": "https://kinosan.mn/uploads/cache/d/c/4c289f8518d2836489a579495d736037c6c6218a_0x360.jpg",        
+        "occupations": [3, 4]
+    },
+    {
+        "id": 1011,
+        "name": "Эрхэмбүрэн.Р",
+        "firstname": "Эрхэмбүрэн",
+        "lastname": "Равжин",
+        "country": "Монгол",
+        "birthdate": "",       
+        "biography": "",        
+        "image": "https://kinosan.mn/uploads/cache/9/9/25bc2d83d75d827f5ab220f809ee0ce359f4c76a_0x360.jpg",        
+        "occupations": [1, 3, 4]
+    },
+    {
+        "id": 1012,
+        "name": "Баттүшиг.А",
+        "firstname": "Баттүшиг",
+        "lastname": "Амарсанаа",
+        "country": "Монгол",
+        "birthdate": "1981-10-03",       
+        "biography": "",        
+        "image": "https://kinosan.mn/uploads/cache/c/9/eada9d4050f61349437f850a5cd5663fe989aec2_0x360.jpg",        
+        "occupations": [1, 3, 4]
+    }          
 ]

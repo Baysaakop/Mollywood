@@ -81,7 +81,7 @@ const ContentList = (props) => {
 
     const getYearFromDate = (date) => {
         return date.slice(0, 4);
-    }
+    }    
 
     return (
         <div>
@@ -93,8 +93,8 @@ const ContentList = (props) => {
                     {props.keyword}
                 </Breadcrumb.Item>
             </Breadcrumb>                            
-            <Row style={{ padding: '16px' }}>                
-                <Col sm={12} md={18}>
+            <Row className="main" gutter={[16, 16]}>                
+                <Col xs={24} sm={12} md={18}>
                     <Row gutter={[16, 16]}>
                         <Col xs={24} md={12}>
                             <h3>Нийт: {contents.length} {props.keyword}</h3>
@@ -148,7 +148,7 @@ const ContentList = (props) => {
                                 md: 4,
                                 lg: 4,
                                 xl: 6,
-                                xxl: 6,
+                                xxl: 8,
                             }}
                             dataSource={contents}
                             pagination={{
@@ -172,7 +172,7 @@ const ContentList = (props) => {
                         /> 
                     )}                                       
                 </Col>
-                <Col sm={24} md={6}>                    
+                <Col xs={24} sm={12} md={6}>                    
                     <ContentFilterForm 
                         type={type}
                         keyword={props.keyword}

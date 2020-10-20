@@ -65,6 +65,14 @@ const ContentListItem = (props) => {
         setRateVisible(false);
     }
 
+    const checkDate = (date) => {    
+        let d = new Date(date);
+        if (d.getMonth() === 0 && d.getDate() === 1) {
+            return d.getFullYear();
+        }    
+        return date;
+    }
+
     return (
         <div>
             <Row gutter={[24, 8]}>
@@ -87,7 +95,7 @@ const ContentListItem = (props) => {
                     <Row>                    
                         <Col xs={24} md={8}><StarOutlined /> Үнэлгээ: {props.rating}/10</Col>     
                         <Col xs={24} md={8}><ClockCircleOutlined /> Хугацаа: {props.item.runningtime} мин</Col>                        
-                        <Col xs={24} md={8}><CalendarOutlined /> Нээлт: {props.item.release_date}</Col>
+                        <Col xs={24} md={8}><CalendarOutlined /> Нээлт: {checkDate(props.item.release_date)}</Col>
                     </Row>
                 </Col>
                 <Col xs={24} sm={12} md={4}>

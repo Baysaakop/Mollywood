@@ -1,7 +1,6 @@
-.filter-form form.ant-form {
-    margin: 0px 16px;
+.filter-form form.ant-form {    
     padding: 16px;
-    border: 1px solid #d9d9d9; 
+    border: 1px solid #d9d9d9;     
     /* 001529 */
 }
 

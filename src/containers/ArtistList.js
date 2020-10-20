@@ -56,7 +56,7 @@ const ArtistList = (props) => {
                     {props.keyword}
                 </Breadcrumb.Item>
             </Breadcrumb>                            
-            <Row style={{ padding: '16px' }}>                
+            <Row style={{ padding: '16px' }} ckassName="main">                
                 <Col sm={12} md={18}>
                     <div style={{ marginBottom: '16px', display: 'flex', justifyContent: 'space-between' }}>
                         <div>

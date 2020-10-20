@@ -23,7 +23,7 @@ const CustomLayout = (props) => {
                     {props.children}
                 </div>
             </Content>
-            <Footer style={{ textAlign: 'center' }}>Mollywood ©2020 Created by On Plus Development</Footer>
+            <Footer style={{ textAlign: 'center' }}>Mollywood ©2020 Created by On Plus</Footer>
         </Layout>
     );
 };
