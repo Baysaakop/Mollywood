@@ -61,6 +61,10 @@ const ArtistDetail = (props) => {
         return date;
     }
 
+    const getYearFromDate = (date) => {
+        return date.slice(0, 4);
+    } 
+
     const like = () => {
         if (buttonLike === 'action') {
             setButtonLike('actionChecked');
@@ -149,9 +153,10 @@ const ArtistDetail = (props) => {
                                                 <List.Item>
                                                     <List.Item.Meta
                                                         avatar={<Avatar shape="square" size={64} src={item.image} />}
-                                                        title={<a href={`/movies/${item.id}`}>{item.title}</a>}    
-                                                        description={checkDate(item.release_date)}                                                
+                                                        title={<a href={`/movies/${item.id}`}>{item.title} /{getYearFromDate(item.release_date)}/</a>}    
+                                                        description={<h3><StarFilled style={{ fontSize: '18px', color: '#AAF50A' }} />{item.score}/10</h3>}                                                
                                                     />
+                                                    <p>Найруулагч</p>                                                    
                                                 </List.Item>
                                             )}
                                         />

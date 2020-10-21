@@ -211,7 +211,7 @@ const ContentDetail = (props) => {
                                                     <List.Item.Meta
                                                         avatar={<Avatar src={getArtist(item.artistid).image} />}
                                                         title={<a href={`/artists/${item.artistid}`}>{getArtist(item.artistid).name}</a>} 
-                                                        description={item.role}                                      
+                                                        description={item.role}
                                                     />
                                                 </List.Item>
                                             )}

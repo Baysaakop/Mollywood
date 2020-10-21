@@ -155,7 +155,7 @@ const ContentList = (props) => {
                                 onChange: page => {
                                     console.log(page)
                                 },
-                                pageSize: 30,
+                                pageSize: 24,
                             }}
                             renderItem={item => (
                                 <List.Item>
