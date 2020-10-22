@@ -77,6 +77,9 @@ const CustomMenu = (props) => {
                         <Menu.Item key="language">          
                             ХЭЛ       
                         </Menu.Item>  
+                        <Menu.Item key="admin" style={{ float: 'right' }}>
+                            <Link to="/admin">АДМИН</Link>
+                        </Menu.Item>
                         <Menu.Item key="signin" onClick={showSignInModal}>
                             НЭВТРЭХ
                         </Menu.Item>                                                                                                             
@@ -95,17 +98,20 @@ const CustomMenu = (props) => {
                             <Link to="/movies">КИНО</Link>
                         </Menu.Item>
                         <Menu.Item key="series">
-                            <Link to="/series">ЦУВРАЛ</Link>
+                            <Link to="/series">ТВ ЦУВРАЛ</Link>
                         </Menu.Item>
                         <Menu.Item key="artists">
                             <Link to="/artists">УРАН БҮТЭЭЛЧ</Link>
                         </Menu.Item>
                         <Menu.Item key="blogs">
-                            <Link to="/blogs">БЛОГ</Link>
+                            <Link to="/blogs">МЭДЭЭЛЭЛ</Link>
                         </Menu.Item>        
                         <Menu.Item key="signin" style={{ float: 'right' }} onClick={showSignInModal}>
                             НЭВТРЭХ
-                        </Menu.Item>      
+                        </Menu.Item>
+                        <Menu.Item key="admin" style={{ float: 'right' }}>
+                            <Link to="/admin">АДМИН</Link>
+                        </Menu.Item>                        
                         <Menu.Item key="language" style={{ float: 'right' }}>          
                             <GlobalOutlined style={{ fontSize: '20px' }} />          
                         </Menu.Item>     
