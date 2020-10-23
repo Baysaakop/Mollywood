@@ -2,16 +2,20 @@ import React, { useEffect, useState } from 'react';
 import { Breadcrumb, Col, Menu, Row, Form, Input, Select } from 'antd';
 import { UserOutlined, LaptopOutlined, VideoCameraOutlined } from '@ant-design/icons';
 import ContentAddForm from '../components/ContentAddForm';
+import ContentUpdateForm from '../components/ContentUpdateForm';
+import ArtistAddForm from '../components/ArtistAddForm';
+import ArtistUpdateForm from '../components/ArtistUpdateForm';
 
 const { SubMenu } = Menu;
+const { Option } = Select;
 
 const Admin = (props) => {    
-    const [selection, setSelection] = useState('1');    
+    const [selection, setSelection] = useState('1');            
 
     const handleSelection = value => {
         console.log(value.key);
         setSelection(value.key);
-    }
+    }    
 
     return (
         <div>
@@ -38,12 +42,12 @@ const Admin = (props) => {
                                 <Menu.Item key="2">Кино засах/устгах</Menu.Item>                                
                             </SubMenu>
                             <SubMenu key="series" icon={<LaptopOutlined />} title="Цуврал">
-                                <Menu.Item key="3">option3</Menu.Item>
-                                <Menu.Item key="4">option4</Menu.Item>
+                                <Menu.Item key="3">Цуврал нэмэх</Menu.Item>
+                                <Menu.Item key="4">Цуврал засах/устгах</Menu.Item>
                             </SubMenu>
                             <SubMenu key="artists" icon={<UserOutlined />} title="Уран бүтээлч">
-                                <Menu.Item key="5">option5</Menu.Item>
-                                <Menu.Item key="6">option6</Menu.Item>                                
+                                <Menu.Item key="5">Уран бүтээлч нэмэх</Menu.Item>
+                                <Menu.Item key="6">Уран бүтээлч засах/устгах</Menu.Item>                                
                             </SubMenu>
                         </Menu>
                     </Col>
@@ -53,10 +57,24 @@ const Admin = (props) => {
                                 <h2>Кино нэмэх</h2>
                                 <ContentAddForm />
                             </div>
-                        ) : (
+                        ) : selection === '2' ? (
                             <div>
-                                <h2>Кино засах</h2>
+                                <h2>Кино засах/устгах</h2>
+                                <ContentUpdateForm />                                
                             </div>
+                        ) : selection === '5' ? (
+                            <div>
+                                <h2>Уран бүтээлч нэмэх</h2>
+                                <ArtistAddForm />
+                            </div>
+                        ) : selection === '6' ? (
+                            <div>
+                                <h2>Уран бүтээлч засах/устгах</h2>
+                                <ArtistUpdateForm />
+                            </div>
+                        ) : (
+                            <>
+                            </>
                         )}
                     </Col>                    
                 </Row>

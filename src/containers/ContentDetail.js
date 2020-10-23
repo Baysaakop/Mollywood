@@ -44,12 +44,12 @@ const ContentDetail = (props) => {
         //     setCountries(data.production_countries);
         //     setLanguages(data.spoken_languages);
         // })      
-        let movie = movielist.find((item) => parseInt(item.id) === parseInt(props.match.params.id));     
-        let moviegenres = movie.genres.map((item) => 
+        let c = movielist.find((item) => parseInt(item.id) === parseInt(props.match.params.id));     
+        let moviegenres = c.genres.map((item) => 
             genrelist.find((g) => parseInt(g.id) === parseInt(item))
         );
         setGenres(moviegenres);
-        setContent(movie);             
+        setContent(c);                     
     }, []);    
 
     const getArtist = (id) => {

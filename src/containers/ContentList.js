@@ -166,6 +166,7 @@ const ContentList = (props) => {
                                         image={item.image}   
                                         rating={item.score}
                                         date={getYearFromDate(item.release_date)}
+                                        genres={item.genres}
                                     />                         
                                 </List.Item>
                             )}
