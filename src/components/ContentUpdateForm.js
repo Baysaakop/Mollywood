@@ -71,7 +71,7 @@ const ContentUpdateForm = (props) => {
                     label="Кино сонгох"
                 >
                     <Select                                   
-                        defaultValue={content.title} 
+                        defaultValue={content.name} 
                         showSearch                                                                                             
                         optionFilterProp="children"
                         filterOption={(input, option) => 
@@ -81,7 +81,7 @@ const ContentUpdateForm = (props) => {
                         style={{  }}
                     >
                         {contents.map((c) => 
-                            <Option key={c.id} value={c.id}>{c.title}</Option>
+                            <Option key={c.id} value={c.id}>{c.name}</Option>
                         )}
                     </Select>
                 </Form.Item>
@@ -90,7 +90,7 @@ const ContentUpdateForm = (props) => {
                     label="Нэр"          
                     rules={[{ required: true }]}        
                 >
-                    <Input placeholder="Нэр" defaultValue={content.title} />
+                    <Input placeholder="Нэр" defaultValue={content.name} />
                 </Form.Item>
                 <Form.Item
                     name="description"

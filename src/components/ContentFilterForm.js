@@ -29,7 +29,7 @@ const ContentFilterForm = (props) => {
         let ratingmax = checkInput(values['ratingmax']);
         let result = props.contents;        
         if (name !== '') {
-            result = result.filter((content) => content.title.toLowerCase().includes(name.toLowerCase()));            
+            result = result.filter((content) => content.name.toLowerCase().includes(name.toLowerCase()));            
         }       
         if (genre !== '' && genre !== 0) {                 
             result = result.filter((content) => content.genres.includes(genre));            

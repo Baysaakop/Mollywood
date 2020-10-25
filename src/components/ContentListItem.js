@@ -83,7 +83,7 @@ const ContentListItem = (props) => {
                 </Col>
                 <Col xs={12} sm={16} md={16}>
                     <Link to={`/${type}/${props.id}`}>
-                        <h2 style={{ margin: '0' }}>{props.item.title} <span style={{ opacity: '.5', fontSize: 'large' }}>/{props.date}/</span></h2>                                        
+                        <h2 style={{ margin: '0' }}>{props.item.name} <span style={{ opacity: '.5', fontSize: 'large' }}>/{props.date}/</span></h2>                                        
                     </Link>
                     <p style={{ fontSize: '12px' }}>
                         Адал явдал / Гэмт хэрэг / Драм

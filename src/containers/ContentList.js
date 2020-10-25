@@ -64,7 +64,7 @@ const ContentList = (props) => {
     };
 
     const orderByTitle = (data) => {        
-        return data.sort((a, b) => a.title.localeCompare(b.title));
+        return data.sort((a, b) => a.name.localeCompare(b.name));
     }
 
     const orderByReleaseDate = (data) => {
@@ -162,7 +162,7 @@ const ContentList = (props) => {
                                     <ContentCard                                    
                                         id={item.id}                            
                                         type={type}        
-                                        name={item.title} 
+                                        name={item.name} 
                                         image={item.image}   
                                         rating={item.score}
                                         date={getYearFromDate(item.release_date)}

@@ -36,8 +36,7 @@ const ArtistDetail = (props) => {
         let artistoccupations = artist.occupations.map((item) => 
             occupationlist.find((o) => parseInt(o.id) === parseInt(item))
         );
-        let artistmovies = [];
-        //  movielist.find((item) => item.crew.find((c) => parseInt(c.artistid) === parseInt(artist.id)));
+        let artistmovies = [];        
         movielist.map((item) => {
             var res = item.crew.find((c) => 
                 parseInt(c.artistid) === parseInt(artist.id)
@@ -153,7 +152,7 @@ const ArtistDetail = (props) => {
                                                 <List.Item>
                                                     <List.Item.Meta
                                                         avatar={<Avatar shape="square" size={64} src={item.image} />}
-                                                        title={<a href={`/movies/${item.id}`}>{item.title} /{getYearFromDate(item.release_date)}/</a>}    
+                                                        title={<a href={`/movies/${item.id}`}>{item.name} /{getYearFromDate(item.release_date)}/</a>}    
                                                         description={<h3><StarFilled style={{ fontSize: '18px', color: '#AAF50A' }} />{item.score}/10</h3>}                                                
                                                     />
                                                     <p>Найруулагч</p>                                                    

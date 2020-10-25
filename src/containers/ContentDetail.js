@@ -15,6 +15,7 @@ const ContentDetail = (props) => {
     const api_key = process.env.REACT_APP_API;
     const [content, setContent] = useState({});
     const [genres, setGenres] = useState([]);
+    const [occupations, setOccupations] = useState([]);
     const [buttonLike, setButtonLike] = useState('action');
     const [buttonCheck, setButtonCheck] = useState('action');
     const [buttonWatchlist, setButtonWatchlist] = useState('action');
@@ -49,7 +50,8 @@ const ContentDetail = (props) => {
             genrelist.find((g) => parseInt(g.id) === parseInt(item))
         );
         setGenres(moviegenres);
-        setContent(c);                     
+        setContent(c);           
+        setOccupations(occupationlist);
     }, []);    
 
     const getArtist = (id) => {
@@ -98,6 +100,12 @@ const ContentDetail = (props) => {
         setScore(value);
     }
 
+    const getOccupationByID = (id) => {
+        let role = occupations.find(o => o.id === id);
+        console.log(role);
+        return role.name_mn;
+    }
+
     return (
         <div>
             <Breadcrumb style={{ padding: '16px' }}>
@@ -108,7 +116,7 @@ const ContentDetail = (props) => {
                     <a href={`/${props.type}`}>{props.keyword}</a>
                 </Breadcrumb.Item>
                 <Breadcrumb.Item>
-                    {content.title}
+                    {content.name}
                 </Breadcrumb.Item>
             </Breadcrumb> 
             <div className="main">
@@ -124,7 +132,7 @@ const ContentDetail = (props) => {
                                 </div>                                
                             </Col>
                             <Col span={24} md={16}>
-                                <p className="title">{content.title}</p> 
+                                <p className="title">{content.name}</p> 
                                 <p style={{ opacity: '0.7', margin: 0 }}>
                                     {genres.map((g) =>                       
                                         <span key={g.id}>{g.name_mn} / </span>
@@ -195,7 +203,7 @@ const ContentDetail = (props) => {
                                                     <List.Item.Meta
                                                         avatar={<Avatar src={getArtist(item.artistid).image} />}
                                                         title={<a href={`/artists/${item.artistid}`}>{getArtist(item.artistid).name}</a>} 
-                                                        description={item.role}                                                   
+                                                        description={getOccupationByID(item.role)}                                                   
                                                     />
                                                 </List.Item>
                                             )}
