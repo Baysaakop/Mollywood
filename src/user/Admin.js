@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Breadcrumb, Col, Menu, Row, Form, Input, Select } from 'antd';
-import { UserOutlined, LaptopOutlined, VideoCameraOutlined } from '@ant-design/icons';
-import ContentAddForm from '../components/ContentAddForm';
-import ContentUpdateForm from '../components/ContentUpdateForm';
-import ArtistAddForm from '../components/ArtistAddForm';
-import ArtistUpdateForm from '../components/ArtistUpdateForm';
+import { TeamOutlined, LaptopOutlined, VideoCameraOutlined } from '@ant-design/icons';
+import ContentAddForm from '../content/ContentAddForm';
+import ContentUpdateForm from '../content/ContentUpdateForm';
+import ArtistAddForm from '../artist/ArtistAddForm';
+import ArtistUpdateForm from '../artist/ArtistUpdateForm';
 
 const { SubMenu } = Menu;
 const { Option } = Select;
@@ -45,7 +45,7 @@ const Admin = (props) => {
                                 <Menu.Item key="3">Цуврал нэмэх</Menu.Item>
                                 <Menu.Item key="4">Цуврал засах/устгах</Menu.Item>
                             </SubMenu>
-                            <SubMenu key="artists" icon={<UserOutlined />} title="Уран бүтээлч">
+                            <SubMenu key="artists" icon={<TeamOutlined />} title="Уран бүтээлч">
                                 <Menu.Item key="5">Уран бүтээлч нэмэх</Menu.Item>
                                 <Menu.Item key="6">Уран бүтээлч засах/устгах</Menu.Item>                                
                             </SubMenu>

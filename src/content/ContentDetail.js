@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import './ContentDetail.css';
+import '../css/ContentDetail.css';
 import { Breadcrumb, Row, Col, Button, Tooltip, Tabs, Modal, Rate } from 'antd';
-import { LikeOutlined, CheckOutlined, PlusOutlined, StarOutlined, ShareAltOutlined, StarFilled, PlayCircleOutlined, CreditCardOutlined } from '@ant-design/icons';
+import { LikeOutlined, CheckOutlined, PlusOutlined, StarOutlined, ShareAltOutlined, StarFilled, PlayCircleOutlined } from '@ant-design/icons';
 import { List, Avatar, message } from 'antd';
 
-import movielist from '../movielist.json';
-import genrelist from '../genrelist.json';
-import artistlist from '../artistlist.json';
-import occupationlist from '../occupationlist.json';
-import { Link } from 'react-router-dom';
+import movielist from '../data/movielist.json';
+import genrelist from '../data/genrelist.json';
+import artistlist from '../data/artistlist.json';
+import occupationlist from '../data/occupationlist.json';
 
 const ContentDetail = (props) => {    
 

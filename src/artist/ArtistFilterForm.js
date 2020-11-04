@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Form, Input, Button, Select, InputNumber, DatePicker } from 'antd';
-import './FilterForm.css';
-import occupationlist from '../occupationlist.json';
+import '../css/FilterForm.css';
+import occupationlist from '../data/occupationlist.json';
 
 const { Option } = Select;
 const { RangePicker } = DatePicker;

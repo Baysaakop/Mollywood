@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
-import './ContentListItem.css';
+import '../css/ContentListItem.css';
 import { Card, Tooltip, message, Row, Col, Image, Button, Divider, Rate, Modal } from 'antd';
-import { LikeOutlined, CheckOutlined, PlusOutlined, StarOutlined, ShareAltOutlined, ClockCircleOutlined, CalendarOutlined } from '@ant-design/icons';
+import { LikeOutlined, CheckOutlined, PlusOutlined, StarOutlined, ClockCircleOutlined, CalendarOutlined } from '@ant-design/icons';
 import { Link } from "react-router-dom";
-
-const { Meta } = Card;
 
 const ContentListItem = (props) => {
     const [type, setType] = useState('');

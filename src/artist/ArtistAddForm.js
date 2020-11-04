@@ -1,20 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { Form, Input, DatePicker, InputNumber, Select, Button } from 'antd';
+import { Form, Input, DatePicker, Select, Button } from 'antd';
 import moment from 'moment';
-import artistlist from '../artistlist.json';
-import occupationlist from '../occupationlist.json';
+import occupationlist from '../data/occupationlist.json';
 
 const { TextArea } = Input;
 const { Option } = Select;
 
-const ArtistUpdateForm = () => {    
+const ArtistAddForm = () => {    
     const [form] = Form.useForm();
-    const [artist, setArtist] = useState({});
-    const [artists, setArtists] = useState([]);
     const [occupations, setOccupations] = useState([]);
 
     useEffect(() => {
-        setArtists(artistlist);
         setOccupations(occupationlist);              
     }, []);       
 
@@ -23,19 +19,9 @@ const ArtistUpdateForm = () => {
         wrapperCol: { span: 16 },
     };
 
-    const layoutImage = {
-        labelCol: { span: 4 },
-        wrapperCol: { span: 4 },
-    }
-
     const tailLayout = {
         wrapperCol: { offset: 4, span: 16 },
     };
-
-    const onSelectArtist = item => {                
-        setArtist(artists.find((a) => parseInt(a.id) === parseInt(item)));       
-        form.resetFields();
-    }
 
     const onFinish = values => {
         console.log(values);
@@ -45,8 +31,6 @@ const ArtistUpdateForm = () => {
         form.resetFields();
     };
 
-    const dateFormat = 'YYYY-MM-DD';
-
     return (
         <div className="addform">
             <Form              
@@ -55,64 +39,43 @@ const ArtistUpdateForm = () => {
                 name="movieform"                                                              
                 onFinish={onFinish}                    
             >
-                <Form.Item
-                    name="selectartist"
-                    label="Уран бүтээлч сонгох"
-                >
-                    <Select                                   
-                        defaultValue={artist.name} 
-                        showSearch                                                                                             
-                        optionFilterProp="children"
-                        filterOption={(input, option) => 
-                            option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                        }
-                        onSelect={onSelectArtist}
-                        style={{  }}
-                    >
-                        {artists.map((a) => 
-                            <Option key={a.id} value={a.id}>{a.name}</Option>
-                        )}
-                    </Select>
-                </Form.Item>
                 <Form.Item                    
                     name="name"                            
                     label="Харагдах нэр"          
                     rules={[{ required: true }]}        
                 >
-                    <Input placeholder="Бат-Эрдэнэ.Б" defaultValue={artist.name} />
+                    <Input placeholder="Бат-Эрдэнэ.Б" />
                 </Form.Item>
                 <Form.Item                    
                     name="firstname"                            
                     label="Нэр"                                     
                 >
-                    <Input placeholder="Бат-Эрдэнэ" defaultValue={artist.firstname} />
+                    <Input placeholder="Бат-Эрдэнэ" />
                 </Form.Item>
-                <Form.Item                    
+                <Form.Item
                     name="lastname"                            
                     label="Овог"                                      
                 >
-                    <Input placeholder="Болд" defaultValue={artist.lastname} />
+                    <Input placeholder="Овог" />
                 </Form.Item>                
-                <Form.Item                    
+                <Form.Item
                     name="biography"
                     label="Танилцуулга"
                     rules={[{ required: true }]}  
                 >
-                    <TextArea rows={4} defaultValue={artist.biography} />
+                    <TextArea rows={4} />
                 </Form.Item>
                 <Form.Item
-
                     name="birthdate"
                     label="Төрсөн өдөр"  
                 >
-                    <DatePicker defaultValue={ Object.entries(artist).length > 0 ? moment(artist.birthdate, dateFormat) : moment()} />
+                    <DatePicker defaultValue={moment()} />
                 </Form.Item>
                 <Form.Item 
                     name="occupation" 
                     label="Мэргэжил"
                 >
                     <Select
-                        defaultValue={artist.occupations}
                         showSearch
                         mode="multiple"                                                                              
                         optionFilterProp="children"
@@ -130,20 +93,12 @@ const ArtistUpdateForm = () => {
                         Хадгалах
                     </Button> 
                     <Button htmlType="button" className="resetbutton" style={{ marginRight: '8px' }} onClick={onReset}>
-                        Буцаах
-                    </Button>    
-                    { Object.entries(artist).length > 0 ? (
-                        <Button type="primary" danger htmlType="button" className="deletebutton" style={{ marginRight: '8px' }}>
-                            Устгах
-                        </Button>                            
-                    ) : (
-                        <>
-                        </>
-                    )}                        
+                        Арилгах
+                    </Button>                            
                 </Form.Item>
             </Form>
         </div>
     );
 }
 
-export default ArtistUpdateForm;
+export default ArtistAddForm;

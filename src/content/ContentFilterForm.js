@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import { Form, Input, Button, Select, InputNumber, DatePicker } from 'antd';
-import './FilterForm.css';
-import genrelist from '../genrelist.json';
+import { Form, Input, Button, Select, InputNumber } from 'antd';
+import '../css/FilterForm.css';
+import genrelist from '../data/genrelist.json';
 
 const { Option } = Select;
-const { RangePicker } = DatePicker;
 
 const ContentFilterForm = (props) => {
     
     const api_key = process.env.REACT_APP_API;
     const [genres, setGenres] = useState([]);
+    const [name, setName] = useState('');
+    const [genre, setGenre] = useState(0);
+    const [releaseFrom, setReleaseFrom] = useState(0);
+    const [releaseTo, setReleaseTo] = useState(0);
+    const [ratingMin, setRatingMin] = useState(0);
+    const [ratingMax, setRatingMax] = useState(0);
 
     useEffect(() => {
         // fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${api_key}&language=en-US`)
@@ -51,6 +56,24 @@ const ContentFilterForm = (props) => {
         props.filter(result); 
     };
 
+    // const onNameChange = e => {
+    //     let value = checkInput(e.target.value);
+    //     let result = props.contents;
+    //     if (value !== '') {
+    //         result = result.filter((content) => content.name.toLowerCase().includes(value.toLowerCase()));            
+    //     }  
+    //     props.filter(result);     
+    // };
+
+    // const onGenreSelect = e => {    
+    //     let value = e;
+    //     let result = props.contents;
+    //     if (value !== '' && value !== 0) {                 
+    //         result = result.filter((content) => content.genres.includes(value));            
+    //     }   
+    //     props.filter(result);         
+    // };
+
     const checkInput = (input) => {        
         if (input === undefined)
             return '';
@@ -62,8 +85,8 @@ const ContentFilterForm = (props) => {
         <div className="filter-form">
             <Form                        
                 name="filter-form"                          
-                layout="vertical"              
-                onFinish={onFinish}                    
+                layout="vertical"  
+                onFinish={onFinish}                                                     
             >
                 <h2>{props.keyword} хайх</h2>
                 <Form.Item

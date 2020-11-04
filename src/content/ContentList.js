@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import './ContentList.css';
+import '../css/ContentList.css';
 import { Breadcrumb, Col, List, Radio, Row, Select, Tooltip, Space } from 'antd';
-import ContentCard from '../components/ContentCard';
-import ContentFilterForm from '../components/ContentFilterForm';
-import movielist from '../movielist.json';
-import serieslist from '../serieslist.json';
-import Icon, { AppstoreFilled,  CheckOutlined, LikeOutlined, MenuOutlined, PlusOutlined, StarFilled } from '@ant-design/icons';
-import ContentListItem from '../components/ContentListItem';
+import ContentCard from './ContentCard';
+import ContentFilterForm from './ContentFilterForm';
+import movielist from '../data/movielist.json';
+import serieslist from '../data/serieslist.json';
+import { AppstoreFilled, MenuOutlined } from '@ant-design/icons';
+import ContentListItem from './ContentListItem';
 
 const { Option } = Select;
 
@@ -94,12 +94,12 @@ const ContentList = (props) => {
                 </Breadcrumb.Item>
             </Breadcrumb>                            
             <Row className="main" gutter={[16, 16]}>                
-                <Col xs={24} sm={12} md={18}>
-                    <Row gutter={[16, 16]}>
-                        <Col xs={24} md={12}>
+                <Col xs={24} sm={12} md={16} lg={18}>
+                    <Row gutter={[8, 8]}>
+                        <Col xs={24} sm={24} md={24} lg={8}>
                             <h3>Нийт: {contents.length} {props.keyword}</h3>
                         </Col>
-                        <Col xs={24} md={12} id="modeselector">                            
+                        <Col xs={24} sm={24} md={24} lg={16} id="modeselector">                            
                             <Select defaultValue={orderMode} style={{ width: 200 }} onChange={selectOrderMode}>   
                                 <Option value="title">Үсгийн дараалал</Option>
                                 <Option value="rating">Үнэлгээгээр</Option>
@@ -145,9 +145,9 @@ const ContentList = (props) => {
                                 gutter: 16,
                                 xs: 2,
                                 sm: 2,
-                                md: 4,
+                                md: 2,
                                 lg: 4,
-                                xl: 6,
+                                xl: 5,
                                 xxl: 8,
                             }}
                             dataSource={contents}
@@ -155,7 +155,7 @@ const ContentList = (props) => {
                                 onChange: page => {
                                     console.log(page)
                                 },
-                                pageSize: 24,
+                                pageSize: 40,
                             }}
                             renderItem={item => (
                                 <List.Item>
@@ -173,7 +173,7 @@ const ContentList = (props) => {
                         /> 
                     )}                                       
                 </Col>
-                <Col xs={24} sm={12} md={6}>                    
+                <Col xs={24} sm={12} md={8} lg={6}>                    
                     <ContentFilterForm 
                         type={type}
                         keyword={props.keyword}

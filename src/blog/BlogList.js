@@ -1,6 +1,6 @@
 import React from 'react';
 import { Breadcrumb, Row, Col, List, Avatar, Space } from 'antd';
-import { MessageOutlined, LikeOutlined, StarOutlined, ShareAltOutlined } from '@ant-design/icons';
+import { MessageOutlined, LikeOutlined, ShareAltOutlined } from '@ant-design/icons';
 
 const listData = [];
 for (let i = 0; i < 23; i++) {

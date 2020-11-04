@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import './ContentDetail.css';
-import { Breadcrumb, Row, Col, Button, Tooltip, Tabs, Modal, Rate } from 'antd';
-import { LikeOutlined, CheckOutlined, PlusOutlined, StarOutlined, ShareAltOutlined, StarFilled, PlayCircleOutlined, CreditCardOutlined, HeartOutlined, UserAddOutlined } from '@ant-design/icons';
+import '../css/ContentDetail.css';
+import { Breadcrumb, Row, Col, Button, Tooltip, Tabs } from 'antd';
+import { PlusOutlined, StarFilled, HeartOutlined, UserAddOutlined } from '@ant-design/icons';
 import { List, Avatar, message } from 'antd';
 
-import artistlist from '../artistlist.json';
-import occupationlist from '../occupationlist.json';
-import movielist from '../movielist.json';
+import artistlist from '../data/artistlist.json';
+import occupationlist from '../data/occupationlist.json';
+import movielist from '../data/movielist.json';
 
 const ArtistDetail = (props) => {    
 

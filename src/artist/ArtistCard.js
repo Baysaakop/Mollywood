@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import './ContentCard.css';
+import '../css/ContentCard.css';
 import { Card, Tooltip, message } from 'antd';
-import { LikeOutlined, CheckOutlined, PlusOutlined, StarFilled, HeartOutlined, UserAddOutlined, EllipsisOutlined } from '@ant-design/icons';
+import { PlusOutlined, HeartOutlined, UserAddOutlined } from '@ant-design/icons';
 import { Link } from "react-router-dom";
 
 const { Meta } = Card;

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Breadcrumb, Col, List, Row, Select } from 'antd';
-import ArtistFilterForm from '../components/ArtistFilterForm';
-import artistlist from '../artistlist.json';
-import ArtistCard from '../components/ArtistCard';
+import ArtistFilterForm from './ArtistFilterForm';
+import artistlist from '../data/artistlist.json';
+import ArtistCard from './ArtistCard';
 
 const { Option } = Select;
 
