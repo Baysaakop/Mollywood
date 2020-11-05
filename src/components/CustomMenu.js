@@ -46,6 +46,10 @@ const CustomMenu = (props) => {
         setModal(value);
     }
 
+    const closeModal = () => {
+        setModal('');
+    }
+
     const screens = useBreakpoint();                         
 
     return (                
@@ -86,7 +90,11 @@ const CustomMenu = (props) => {
                         </Menu.Item>          
                         { 
                         props.currentUser ? 
-                            <SubMenu key="usermenu" icon={<UserOutlined />} title={props.currentUser.displayName}>
+                            <SubMenu 
+                                key="usermenu"                                 
+                                icon={ props.currentUser.photoURL ? <Avatar src={props.currentUser.photoURL} /> : <UserOutlined /> } 
+                                title={props.currentUser.displayName} 
+                            >
                                 <Menu.Item key="profile">
                                     Хэрэглэгчийн мэдээлэл
                                 </Menu.Item>
@@ -135,9 +143,9 @@ const CustomMenu = (props) => {
                             <>                                
                                 <SubMenu 
                                     key="usermenu" 
-                                    icon={<Avatar src={props.currentUser.photoURL} />} 
+                                    icon={ props.currentUser.photoURL ? <Avatar src={props.currentUser.photoURL} /> : <UserOutlined /> }  
                                     style={{ float: 'right' }}                
-                                    // title={props.currentUser.displayName}   
+                                    title={ ` ${props.currentUser.displayName}` } 
                                 >                                              
                                     <Menu.Item key="profile">                                          
                                         Хэрэглэгчийн мэдээлэл
@@ -180,7 +188,7 @@ const CustomMenu = (props) => {
                         onCancel={hideModal}
                         footer={null}                       
                     >
-                        <SignInForm changeModal={changeModal} />
+                        <SignInForm changeModal={changeModal} closeModal={closeModal} />
                     </Modal>  
                 ) : modal === 'signup' ? (
                     <Modal
@@ -189,7 +197,7 @@ const CustomMenu = (props) => {
                         onCancel={hideModal}
                         footer={null}                       
                     >
-                        <SignUpForm changeModal={changeModal} />
+                        <SignUpForm changeModal={changeModal} closeModal={closeModal} />
                     </Modal> 
                 ) : (
                     <>

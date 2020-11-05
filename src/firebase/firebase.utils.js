@@ -14,7 +14,28 @@ const config = {
 };
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
-    
+    if (!userAuth) {
+        return;
+    }
+    const userRef = firetore.doc(`users/${userAuth.uid}`);
+    const snapShot = await userRef.get();
+    if (!snapShot.exists) {
+        const { displayName, email, photoURL } = userAuth;
+        const createdAt = new Date();
+        try {
+            await userRef.set({
+                displayName, 
+                email,
+                createdAt,
+                photoURL,
+                ...additionalData
+            });
+        } catch (err) {
+            console.log('error creating user', err.message);
+        }
+    }
+
+    return userRef;
 }
 
 firebase.initializeApp(config);
@@ -22,8 +43,12 @@ firebase.initializeApp(config);
 export const auth = firebase.auth();
 export const firetore = firebase.firestore();
 
-const provider = new firebase.auth.GoogleAuthProvider();
-provider.setCustomParameters({ propmt: 'select_account '});
-export const signInWithGoogle = () => auth.signInWithPopup(provider);
+const providerGoogle = new firebase.auth.GoogleAuthProvider();
+providerGoogle.setCustomParameters({ prompt: 'select_account '});
+export const signInWithGoogle = () => auth.signInWithPopup(providerGoogle);
+
+const providerFacebook = new firebase.auth.FacebookAuthProvider();
+providerFacebook.setCustomParameters({ 'display': 'popup '});
+export const signInWithFacebook = () => auth.signInWithPopup(providerFacebook);
 
 export default firebase;

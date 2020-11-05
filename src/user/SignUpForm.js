@@ -1,16 +1,27 @@
 import React from 'react';
-import { Form, Input, Button, Divider } from 'antd';
+import { Form, Input, Button, Divider, message } from 'antd';
 import { UserOutlined, LockOutlined, MailOutlined, GoogleOutlined, FacebookFilled } from '@ant-design/icons';
 import axios from 'axios';
 import * as actions from '../redux/actions/signUpActions';
 import { connect } from 'react-redux';
 
-import { signInWithGoogle } from '../firebase/firebase.utils.js';
+import { auth, createUserProfileDocument, signInWithGoogle, signInWithFacebook } from '../firebase/firebase.utils.js';
 
 const SignUpForm = (props) => {
     
-    const onFinish = values => {        
-        props.signUpUser(values.username, values.email, values.password);
+    const onFinish = async values => {                
+        // props.signUpUser(values.username, values.email, values.password);
+        const displayName = values.username;
+        try {
+            const { user } = await auth.createUserWithEmailAndPassword(
+                values.email,
+                values.password
+            );
+            await createUserProfileDocument(user, { displayName });
+            props.closeModal();
+        } catch (err) {
+            message.error(err.message);
+        }
         // axios({ 
         //     method: 'POST',
         //     url: 'http://192.168.0.103:8000/api/v1/users/register',
@@ -30,7 +41,13 @@ const SignUpForm = (props) => {
     }
 
     const handleSignInWithGoogleClick = () => {        
-        signInWithGoogle()       
+        signInWithGoogle();
+        props.closeModal();       
+    }
+
+    const handleSignInWithFacebookClick = () => {
+        signInWithFacebook();
+        props.closeModal();
     }
 
     return (
@@ -112,7 +129,7 @@ const SignUpForm = (props) => {
                 <Button icon={<GoogleOutlined />} className="login-form-button" onClick={handleSignInWithGoogleClick} style={{ background: '#dd4b39', color: 'white' }}>
                     Google
                 </Button>
-                <Button icon={<FacebookFilled />} className="login-form-button" style={{ background: '#3B5998', color: 'white' }}>
+                <Button icon={<FacebookFilled />} className="login-form-button" onClick={handleSignInWithFacebookClick} style={{ background: '#3B5998', color: 'white' }}>
                     Facebook
                 </Button>
                 {/* <Button icon={<InstagramOutlined />} className="login-form-button" style={{ background: '#125688', color: 'white', width: '33%' }}>

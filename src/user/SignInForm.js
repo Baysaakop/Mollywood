@@ -1,35 +1,30 @@
 import React, { useState } from 'react';
 import { Form, Input, Button, Checkbox, Modal, Divider, message } from 'antd';
-import { UserOutlined, LockOutlined, MailOutlined, GoogleOutlined, FacebookOutlined, FacebookFilled, InstagramFilled, InstagramOutlined } from '@ant-design/icons';
-import SignUpForm from './SignUpForm';
+import { LockOutlined, MailOutlined, GoogleOutlined, FacebookFilled } from '@ant-design/icons';
 import axios from 'axios';
 
-import { signInWithGoogle } from '../firebase/firebase.utils.js';
+import { auth, signInWithFacebook, signInWithGoogle } from '../firebase/firebase.utils.js';
 
 const SignInForm = (props) => {
     
-    // const [signUpVisible, setSignUpVisible] = useState(true);
-
-    // const showSignUpModal = () => {
-    //     setSignUpVisible(true);
-    // }
-
-    // const hideSignUpModal = () => {
-    //     setSignUpVisible(false);
-    // }
-
-    const onFinish = values => {
-        axios({ 
-            method: 'POST',
-            url: 'http://192.168.0.104:8000/api/v1/users/login',
-            data:{                 
-                email: values.email,
-                password: values.password 
-            }
-        })
-        .then(res => {
-            console.log(res);
-        })
+    const onFinish = async values => {
+        try {
+            await auth.signInWithEmailAndPassword(values.email, values.password);
+            props.closeModal();
+        } catch (err) {
+            message.error(err.message);
+        }
+        // axios({ 
+        //     method: 'POST',
+        //     url: 'http://192.168.0.104:8000/api/v1/users/login',
+        //     data:{                 
+        //         email: values.email,
+        //         password: values.password 
+        //     }
+        // })
+        // .then(res => {
+        //     console.log(res);
+        // })
     };
 
     const handleSignUpClick = () => {
@@ -37,7 +32,13 @@ const SignInForm = (props) => {
     }
 
     const handleSignInWithGoogleClick = () => {        
-        signInWithGoogle()       
+        signInWithGoogle();
+        props.closeModal();      
+    }
+
+    const handleSignInWithFacebookClick = () => {        
+        signInWithFacebook();
+        props.closeModal();      
     }
 
     return (
@@ -89,22 +90,11 @@ const SignInForm = (props) => {
                     <Button icon={<GoogleOutlined />} className="login-form-button" onClick={handleSignInWithGoogleClick} style={{ background: '#dd4b39', color: 'white' }}>
                         Google
                     </Button>
-                    <Button icon={<FacebookFilled />} className="login-form-button" style={{ background: '#3B5998', color: 'white' }}>
+                    <Button icon={<FacebookFilled />} className="login-form-button" onClick={handleSignInWithFacebookClick} style={{ background: '#3B5998', color: 'white' }}>
                         Facebook
                     </Button>
-                    {/* <Button icon={<InstagramOutlined />} className="login-form-button" style={{ background: '#125688', color: 'white', width: '33%' }}>
-                        Instagram
-                    </Button> */}
                 </Form.Item>
             </Form>
-            {/* <Modal
-                title="Бүртгүүлэх"              
-                visible={signUpVisible}       
-                onCancel={hideSignUpModal}
-                footer={null}                       
-            >
-                <SignUpForm />
-            </Modal> */}
         </div>
     );
 };
